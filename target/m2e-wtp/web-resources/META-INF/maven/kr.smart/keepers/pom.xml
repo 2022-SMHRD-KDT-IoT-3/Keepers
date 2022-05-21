@@ -145,7 +145,7 @@
 		<dependency>
           <groupId>mysql</groupId>
           <artifactId>mysql-connector-java</artifactId>
-          <version>5.1.38</version>
+          <version>8.0.29</version>
       	</dependency>
       	<!-- Spring-jdbc, mybatis-spring 둘 사이를 각각 연결하는 api -->
       	<dependency>
