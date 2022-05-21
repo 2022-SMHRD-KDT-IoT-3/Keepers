@@ -10,12 +10,12 @@
 	<!-- 히카리 CP 빈 등록 -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName"
-			value="oracle.jdbc.driver.OracleDriver">
+			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="jdbcUrl"
-			value="jdbc:oracle:thin:@localhost:1521:XE"></property>
-			<property name="username" value="book_ex"></property>
-			<property name="password" value="book_ex"></property>
+			value="jdbc:mysql://project-db-stu.ddns.net:3307/keepers"></property>
+			<property name="username" value="keepers"></property>
+			<property name="password" value="keppers_user1234"></property>
 	</bean>	
 		
 	<!-- 히카리 CP 설정 -->

@@ -6,10 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MemberController {
 
-	
-	@RequestMapping("/")
-	public String a() {
+	//로그인페이지 이동 메소드
+	@RequestMapping("/login.do")
+	public void login() {
 		
-		return "";
+	}
+	
+	//회원가입페이지 이동 메소드
+	@RequestMapping("/join.do")
+	public void join() {
+		
 	}
 }
