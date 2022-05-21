@@ -9,7 +9,7 @@ public class MemberController {
 	//로그인페이지 이동 메소드
 	@RequestMapping("/login.do")
 	public void login() {
-		System.out.println("화남 ^^");
+		System.out.println("화남 ^^^^^");
 	}
 	
 	//회원가입페이지 이동 메소드
