@@ -2,5 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.smart.mapper.MemberMapper">
     
+  <!--   <insert id="joinInsert" parameterType="kr.smhrd.mapper.MemberVO">
+        insert into k_member
+        values(#{m_id}, #{m_pw}, #{m_name}, #{m_phone}, #{m_email}, #{m_department}, #{m_type})
+    </insert> -->
     
 </mapper>
