@@ -7,4 +7,8 @@ public interface MemberMapper {
 
 	void joinInsert(MemberVO vo);
 
+	MemberVO loginSelect(MemberVO vo);
+
+	void memberUpdate(MemberVO vo);
+
 }
