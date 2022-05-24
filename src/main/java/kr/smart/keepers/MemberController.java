@@ -25,7 +25,7 @@ public class MemberController {
 		//회원가입페이지 이동 메소드
 		@RequestMapping("/join.do")
 		public void join() {
-			
+			System.out.println("룰루");
 		}
 		
 		//회원가입 요청 메소드
