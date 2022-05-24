@@ -13,7 +13,7 @@
     <title>Keepers</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="keepers.ico">
+    <link rel="shortcut icon" href="resources/imgs/logo.png">
 
     <!--Google Font link-->
     <link
@@ -21,14 +21,15 @@
         rel="stylesheet">
 
 
-    <link rel="stylesheet" href="assets/css/slick/slick.css">
-    <link rel="stylesheet" href="assets/css/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/iconfont.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/bootsnav.css">
+
+    <link rel="stylesheet" href="resources/css/slick/slick.css">
+    <link rel="stylesheet" href="resources/css/slick/slick-theme.css">
+    <link rel="stylesheet" href="resources/css/animate.css">
+    <link rel="stylesheet" href="resources/css/iconfont.css">
+    <link rel="stylesheet" href="resources/css/font-awesome.min.css">
+    <link rel="stylesheet" href="resources/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/css/magnific-popup.css">
+    <link rel="stylesheet" href="resources/css/bootsnav.css">
 
     <!-- xsslider slider css -->
 
@@ -36,17 +37,15 @@
     <!--<link rel="stylesheet" href="assets/css/xsslider.css">-->
 
 
-
-
     <!--For Plugins external css-->
     <!--<link rel="stylesheet" href="assets/css/plugins.css" />-->
 
     <!--Theme custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="resources/css/style.css">
     <!--<link rel="stylesheet" href="assets/css/colors/maron.css">-->
 
     <!--Theme Responsive css-->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="resources/css/responsive.css" />
 
     <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
@@ -65,6 +64,16 @@
         input {
             border-radius: 8px !important;
         }
+        
+        .mb-3{
+        margin-bottom : 5px;
+        font-size : 18px;
+        }
+        
+        a{
+        font-size : 17px;
+        }
+
     </style>
 
 </head>
@@ -72,7 +81,6 @@
 <body data-spy="scroll" data-target=".navbar-collapse" style="font-family: SUIT-Medium;">
 
 
-    <!-- Preloader -->
     <div id="loading" style="background-color: orange;">
         <div id="loading-center">
             <div id="loading-center-absolute">
@@ -83,7 +91,6 @@
             </div>
         </div>
     </div>
-    <!--End off Preloader -->
 
     <!--Home page style-->
     <nav class="navbar navbar-default bootsnav navbar-fixed">
@@ -93,8 +100,9 @@
                 <div class="col-md-6" style=" margin: 15px; text-align: center;">
                     <div class="navbar-callus text-left sm-text-center">
                         <ul class="list-inline" style="text-align: center;">
-                            <li><img src="./imgs/tel.png" style="width: 15px;"> 문의사항 : 1234 5678 90</img> </li>
-                            <li><img src="./imgs/email.png" style="width: 15px;"></img> 이메일 : your@email.com
+   
+                            <li><img src="resources/imgs/tel.png" style="width: 25px;"> 문의사항 : 1234 5678 90</img> </li>
+                            <li><img src="resources/imgs/email.png" style="width: 25px;"></img> 이메일 : your@email.com
                             </li>
                         </ul>
                     </div>
@@ -124,9 +132,9 @@
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                 </ul>
             </div>
-            <div style="text-align: center; margin-bottom: 30px;">
+            <div style="text-align: center; margin-bottom: 60px;">
                 <a class="navbar-brand" href="Main.html">
-                    <img src="keepers.ico" class="logo" alt="">
+                    <img src="resources/imgs/logo.png" class="logo" alt="" style="width:130px;">
                     <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
                 </a>
 
@@ -300,20 +308,21 @@
 
     <!-- JS includes -->
 
-    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="resources/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="resources/js/vendor/bootstrap.min.js"></script>
 
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.js"></script>
-    <script src="assets/js/jquery.easing.1.3.js"></script>
-    <script src="assets/css/slick/slick.js"></script>
-    <script src="assets/css/slick/slick.min.js"></script>
-    <script src="assets/js/jquery.collapse.js"></script>
-    <script src="assets/js/bootsnav.js"></script>
+    <script src="resources/js/owl.carousel.min.js"></script>
+    <script src="resources/js/jquery.magnific-popup.js"></script>
+    <script src="resources/js/jquery.easing.1.3.js"></script>
+    <script src="resources/css/slick/slick.js"></script>
+    <script src="resources/css/slick/slick.min.js"></script>
+    <script src="resources/js/jquery.collapse.js"></script>
+    <script src="resources/js/bootsnav.js"></script>
 
 
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="resources/js/plugins.js"></script>
+    <script src="resources/js/main.js"></script>
+
 
 </body>
 
