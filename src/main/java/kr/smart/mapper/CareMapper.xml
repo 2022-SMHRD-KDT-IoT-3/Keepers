@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smart.mapper.CareMapper">
+    
+    <!-- 사용자 등록 -->
+    <insert id="careInsert" parameterType="kr.smart.mapper.CareVO">
+        insert into k_care(c_manager_id, c_name, c_birth, c_phone, c_address, c_memo)
+        values(#{c_manager_id}, #{c_name}, #{c_birth}, #{c_phone}, #{c_address}, #{c_memo})
+    </insert>
+    
+    <!-- 사용자 전체 조회 -->
+    <select id="careSelect" parameterType="String" resultType="kr.smart.mapper.CareVO">
+        select *
+        from k_care
+        where c_manager_id = #{c_manager_id}
+    </select>
+    
+    <!--  사용자 정보수정  -->
+    <update id="careUpdate" parameterType="kr.smart.mapper.CareVO">
+        update k_care
+        set c_name=#{c_name}, c_birth=#{c_birth}, c_phone=#{c_phone}, c_address=#{c_address}, c_memo=#{c_memo}
+        where c_seq=#{c_seq}
+    </update>
+    
+    <!-- 사용자 삭제 delete말고 update로 관리자아이디만 변경-->
+    <update id="careDelete" parameterType="int">
+        update k_care
+        set c_manager_id = 'admin'
+        where c_seq = #{c_seq}
+    </update>
+    
+</mapper>
