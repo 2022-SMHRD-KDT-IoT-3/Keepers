@@ -11,7 +11,7 @@ public class BoardController {
 	//게시판 전체보기
 	@RequestMapping("/boardList.do")
 	public String boardList() {
-		
+		System.out.println("");
 		return "";
 	}
 }
