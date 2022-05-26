@@ -29,7 +29,6 @@
 <link rel="stylesheet" href="resources/css/bootstrap.css">
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <link rel="stylesheet" href="resources/css/bootsnav.css">
-
 <!-- xsslider slider css -->
 
 
@@ -51,6 +50,7 @@
 <script src="resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 
+
 <style>
 a {
 	font-size: 17px;
@@ -59,15 +59,6 @@ a {
 #gotop {
 	position: fixed;
 	bottom: 80px;
-}
-
-/* input radius 주려고 만듬 */
-input {
-	border-radius: 8px !important;
-}
-
-.mb-3 {
-	font-size: 20px;
 }
 </style>
 
@@ -174,7 +165,7 @@ input {
 		<!--Home Sections-->
 		<section id="home" class="home bg-black fix" style="height: 600px;">
 			<div class="overlay">
-				<img src="resources/imgs/mainimg3.jpg" alt="" width="1920px"
+				<img src="resources/imgs/mainimg1.jpg" alt="" width="1920px"
 					height="800px" style="opacity: 0.7;">
 			</div>
 			<div class="container"></div>
@@ -236,102 +227,172 @@ input {
 				<div class="main_test fix">
 
 
+					<!-- 개인정보 보여줌, 개인정보수정페이지 연결 -->
+					<div class="col-md-6">
+						<div class="test_item fix" style="text-align: center;">
 
-					<!-- 복지사 회원가입 폼 -->
-					<section style="padding: 30px;">
-						<form action=""
-							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px; width: auto; margin: 100px;">
-							<br> <br>
-							<div
-								style="text-align: center; color: rgb(87, 87, 87); font-size: 25px; font-weight: 600;">
-								복지사 회원가입</div>
-							<hr>
-							<div style="margin-left: 180px; margin-right: 180px;">
-								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">아이디</label>
-									<table>
-										<tr>
-											<td><input type="text" class="form-control"
-												placeholder="아이디를 입력하세요" name="m_id" style="width: 323px;">
-
-											</td>
-
-											<td>
-												<button type="button" class="btn btn-warning"
-													style="font-size: 15px; margin-left: 50px;">중복확인</button>
-											</td>
-											<td></td>
-										</tr>
-									</table>
-
-								</div>
-								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">비밀번호</label> <input type="password"
-										class="form-control" placeholder="비밀번호를 입력하세요" name="m_pw">
-								</div>
-								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">이름</label> <input type="text"
-										class="form-control" placeholder="이름를 입력하세요" name="m_name">
-								</div>
-								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">전화번호</label> <input type="text"
-										class="form-control" placeholder="공백 없이 전화번호를 입력하세요"
-										name="m_phone">
-								</div>
-								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">이메일</label> <input type="text"
-										class="form-control" placeholder="이메일을 입력하세요" name="m_email">
-								</div>
-								<br> <br>
-								<div class="mb-3">
-									<label for="disabledSelect" class="form-label">소속 선택</label> <select
-										id="disabledSelect" class="form-select"
-										style="margin-right: 50px;">
-										<option>인사과</option>
-										<option>복지과</option>
-										<option>관리과</option>
-									</select> <label for="disabledSelect" class="form-label">유형 선택</label> <select
-										id="disabledSelect" class="form-select">
-										<option>1유형</option>
-										<option>2유형</option>
-										<option>3유형</option>
-									</select>
-
-								</div>
-								<br> <br>
-								<hr>
-								<div style="text-align: center;">
-									<button type="reset" class="btn btn-warning"
-										style="margin-right: 30px; font-size: 18px;">취소</button>
-									<button type="submit" class="btn btn-warning"
-										style="margin-right: 30px; font-size: 18px;">등록</button>
-								</div>
-
+							<div class="item_text">
+								<legend style="text-align: center; height: 35px;"> 내 정보
+								</legend>
 								<br> <br> <br>
+								<button type="button" class="btn btn-warning">로그아웃</button>
+								<br> <br> <a href="/C_join.html"><h5
+										style="color: rgb(14, 99, 14);">개인정보 수정을 원하시면 클릭하세요</h5></a>
+
 
 							</div>
-						</form>
-					</section>
-					<!-- 복지사 회원가입 폼 끝-->
+						</div>
+					</div>
 
 
+					<a href="./board.html">
+						<div class="col-md-6">
+							<div class="test_item fix" style="text-align: center;">
+								<div class="item_text">
+									<legend style="text-align: center; height: 35px;">공지사항
+										게시판 </legend>
 
+									<section
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray">
+
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th scope="col">번호</th>
+													<th scope="col">제목</th>
+													<th scope="col">내용</th>
+													<th scope="col">등록일자</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1</th>
+													<td>Mark</td>
+													<td>Otto</td>
+													<td>@mdo</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</section>
+								</div>
+							</div>
+
+						</div>
+					</a>
 
 
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!--두번째 구간-->
+	<section id="test" class="test bg-grey roomy-60 fix"
+		style="background-color: rgba(67, 103, 93, 0.361) !important;">
+		<div class="container">
+			<div class="row">
+				<div class="main_test fix">
+
+
+					<!-- 사용자 조회 -->
+					<a href="./C_select.html">
+						<div class="col-md-6">
+							<div class="test_item fix" style="text-align: center;">
+
+								<div class="item_text">
+									<legend style="text-align: center; height: 35px;"> 사용자
+										조회 </legend>
+									<br>
+									<section
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray">
+
+										<table class="table table-striped">
+											<thead>
+												<tr>
+													<th scope="col">번호</th>
+													<th scope="col">제목</th>
+													<th scope="col">내용</th>
+													<th scope="col">등록일자</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row">1</th>
+													<td>Mark</td>
+													<td>Otto</td>
+													<td>@mdo</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												</tr>
+												<tr>
+													<th scope="row">2</th>
+													<td>Jacob</td>
+													<td>Thornton</td>
+													<td>@fat</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</section>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<!-- 사용자 모니터링 -->
+					<a href="C_monitor.html">
+						<div class="col-md-6">
+							<div class="test_item fix" style="text-align: center;">
+								<div class="item_text">
+									<legend style="text-align: center; height: 35px;">사용자
+										모니터링 </legend>
+
+									<section
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray">
+
+									</section>
+								</div>
+							</div>
+
+						</div>
+					</a>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 
 
@@ -358,7 +419,9 @@ input {
 
 	<!-- 회사소개 구간 -->
 	<div style="background-color: rgba(255, 166, 0, 0.327);">
-		<br> <br> <br>
+		<br>
+		<br>
+		<br>
 	</div>
 	<footer id="contact"
 		style="background-color: rgba(255, 166, 0, 0.327);">
@@ -468,7 +531,11 @@ input {
 			</div>
 		</div>
 		</div>
-		<br> <br> <br> <br> <br> <br> <br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>

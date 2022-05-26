@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -29,7 +29,6 @@
 <link rel="stylesheet" href="resources/css/bootstrap.css">
 <link rel="stylesheet" href="resources/css/magnific-popup.css">
 <link rel="stylesheet" href="resources/css/bootsnav.css">
-
 <!-- xsslider slider css -->
 
 
@@ -156,7 +155,7 @@ input {
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="careJoin.do">사용자 등록</a></li>
+						<li><a href="C_join.html">사용자 등록</a></li>
 						<li><a href="C_select.html">사용자 조회</a></li>
 						<li><a href="C_monitor.html">사용자 모니터링</a></li>
 						<li><a href="board.html">공지사항 게시판</a></li>
@@ -174,7 +173,7 @@ input {
 		<!--Home Sections-->
 		<section id="home" class="home bg-black fix" style="height: 600px;">
 			<div class="overlay">
-				<img src="resources/imgs/mainimg3.jpg" alt="" width="1920px"
+				<img src="resources/imgs/mainimg2.jpg" alt="" width="1920px"
 					height="800px" style="opacity: 0.7;">
 			</div>
 			<div class="container"></div>
@@ -237,88 +236,66 @@ input {
 
 
 
-					<!-- 복지사 회원가입 폼 -->
-					<section style="padding: 30px;">
+					<!-- 독거노인 등록 폼 -->
+					<section
+						style="padding: 30px; margin-left: 150px; margin-right: 150px">
 						<form action=""
-							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px; width: auto; margin: 100px;">
+							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px;">
 							<br> <br>
 							<div
-								style="text-align: center; color: rgb(87, 87, 87); font-size: 25px; font-weight: 600;">
-								복지사 회원가입</div>
+								style="text-align: center; color: rgb(87, 87, 87); font-size: 25px; font-weight: 600;">사용자
+								등록</div>
 							<hr>
-							<div style="margin-left: 180px; margin-right: 180px;">
+							<div style="margin-left: 150px; margin-right: 150px;">
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">아이디</label>
-									<table>
-										<tr>
-											<td><input type="text" class="form-control"
-												placeholder="아이디를 입력하세요" name="m_id" style="width: 323px;">
-
-											</td>
-
-											<td>
-												<button type="button" class="btn btn-warning"
-													style="font-size: 15px; margin-left: 50px;">중복확인</button>
-											</td>
-											<td></td>
-										</tr>
-									</table>
-
-								</div>
-								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">비밀번호</label> <input type="password"
-										class="form-control" placeholder="비밀번호를 입력하세요" name="m_pw">
+										class="form-label">관리자 아이디</label> <input type="text"
+										class="form-control" placeholder="복지사 아이디를 입력하세요"
+										name="c_manager_id">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이름</label> <input type="text"
-										class="form-control" placeholder="이름를 입력하세요" name="m_name">
+										class="form-control" placeholder="이름을 입력하세요" name="c_name">
+								</div>
+								<br>
+								<div class="mb-3">
+									<label for="disabledTextInput" id="inputPassword6"
+										class="form-label">생년월일</label> <input type="date"
+										class="form-control" placeholder="생년월일을 선택하세요" name="c_birth">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">전화번호</label> <input type="text"
 										class="form-control" placeholder="공백 없이 전화번호를 입력하세요"
-										name="m_phone">
+										name="c_phone">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">이메일</label> <input type="text"
-										class="form-control" placeholder="이메일을 입력하세요" name="m_email">
+										class="form-label">주소</label> <input type="text"
+										class="form-control" placeholder="주소를 입력하세요" name="c_address">
 								</div>
-								<br> <br>
+								<br>
 								<div class="mb-3">
-									<label for="disabledSelect" class="form-label">소속 선택</label> <select
-										id="disabledSelect" class="form-select"
-										style="margin-right: 50px;">
-										<option>인사과</option>
-										<option>복지과</option>
-										<option>관리과</option>
-									</select> <label for="disabledSelect" class="form-label">유형 선택</label> <select
-										id="disabledSelect" class="form-select">
-										<option>1유형</option>
-										<option>2유형</option>
-										<option>3유형</option>
-									</select>
-
+									<label for="disabledTextInput" id="inputPassword6"
+										class="form-label">메모</label>
+									<textarea class="form-control" placeholder="특이사항을 입력하세요"
+										name="c_memo" style="border-radius: 8px;">
+                </textarea>
 								</div>
 								<br> <br>
 								<hr>
 								<div style="text-align: center;">
 									<button type="reset" class="btn btn-warning"
-										style="margin-right: 30px; font-size: 18px;">취소</button>
+										style="margin-right: 30px;">초기화</button>
 									<button type="submit" class="btn btn-warning"
-										style="margin-right: 30px; font-size: 18px;">등록</button>
+										style="margin-right: 30px;">등록</button>
 								</div>
-
 								<br> <br> <br>
-
 							</div>
 						</form>
 					</section>
@@ -358,7 +335,9 @@ input {
 
 	<!-- 회사소개 구간 -->
 	<div style="background-color: rgba(255, 166, 0, 0.327);">
-		<br> <br> <br>
+		<br>
+		<br>
+		<br>
 	</div>
 	<footer id="contact"
 		style="background-color: rgba(255, 166, 0, 0.327);">
@@ -468,7 +447,11 @@ input {
 			</div>
 		</div>
 		</div>
-		<br> <br> <br> <br> <br> <br> <br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>
