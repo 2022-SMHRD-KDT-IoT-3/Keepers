@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.smart.mapper.MemberMapper;
 import kr.smart.mapper.MemberVO;
@@ -25,7 +26,7 @@ public class MemberController {
 	// 로그인페이지 이동 메소드
 	@RequestMapping("/login.do")
 	public void login() {
-		System.out.println("화남 ^^^^^");
+		
 	}
 
 	// 회원가입페이지 이동 메소드
@@ -37,10 +38,22 @@ public class MemberController {
 	// 회원가입 요청 메소드
 	@RequestMapping("/joinInsert.do")
 	public String joinInsert(MemberVO vo) {
-
+		System.out.println(vo.toString());
+		System.out.println("회원가입 요청");
+		
 		mapper.joinInsert(vo);
 
-		return "main";
+		return "redirect:/login.do";
+	}
+	
+	//아이디 중복확인 메소드
+	@RequestMapping("/idCheck.do")
+	public @ResponseBody MemberVO idCheck(String m_id) {
+		System.out.println("아이디 중복체크");
+		
+		MemberVO vo = mapper.idCheck(m_id);
+		
+		return vo;
 	}
 
 	// 로그인 요청 메소드

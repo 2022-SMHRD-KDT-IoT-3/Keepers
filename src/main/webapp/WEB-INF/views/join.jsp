@@ -151,18 +151,6 @@ input {
 				</div>
 				<!-- End Header Navigation -->
 
-				<!-- navbar menu -->
-
-				<div class="collapse navbar-collapse" id="navbar-menu">
-					<ul class="nav navbar-nav navbar-right">
-
-						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
 			</div>
 			<br> <br>
 
@@ -239,7 +227,7 @@ input {
 
 					<!-- 복지사 회원가입 폼 -->
 					<section style="padding: 30px;">
-						<form action=""
+						<form action="joinInsert.do"
 							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px; width: auto; margin: 100px;">
 							<br> <br>
 							<div
@@ -254,12 +242,12 @@ input {
 									<table>
 										<tr>
 											<td><input type="text" class="form-control"
-												placeholder="아이디를 입력하세요" name="m_id" style="width: 323px;">
+												placeholder="아이디를 입력하세요" id="m_id" name="m_id" style="width: 323px;">
 
 											</td>
 
 											<td>
-												<button type="button" class="btn btn-warning"
+												<button type="button" class="btn btn-warning" id="idCheck"
 													style="font-size: 15px; margin-left: 50px;">중복확인</button>
 											</td>
 											<td></td>
@@ -295,16 +283,16 @@ input {
 								<br> <br>
 								<div class="mb-3">
 									<label for="disabledSelect" class="form-label">소속 선택</label> <select
-										id="disabledSelect" class="form-select"
+										id="disabledSelect" class="form-select" name="m_department"
 										style="margin-right: 50px;">
-										<option>인사과</option>
-										<option>복지과</option>
-										<option>관리과</option>
+										<option value="인사과">인사과</option>
+										<option value="복지과">복지과</option>
+										<option value="관리과">관리과</option>
 									</select> <label for="disabledSelect" class="form-label">유형 선택</label> <select
-										id="disabledSelect" class="form-select">
-										<option>1유형</option>
-										<option>2유형</option>
-										<option>3유형</option>
+										id="disabledSelect" class="form-select" name="m_type">
+										<option value="B">1유형</option>
+										<option value="S">2유형</option>
+										<option value="J">3유형</option>
 									</select>
 
 								</div>
@@ -313,7 +301,7 @@ input {
 								<div style="text-align: center;">
 									<button type="reset" class="btn btn-warning"
 										style="margin-right: 30px; font-size: 18px;">취소</button>
-									<button type="submit" class="btn btn-warning"
+									<button type="button" class="btn btn-warning" id="join"
 										style="margin-right: 30px; font-size: 18px;">등록</button>
 								</div>
 
@@ -490,6 +478,32 @@ input {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
+	<script>
+		$('#idCheck').click(function(){
+			var m_id = $('#m_id').val();
+			console.log(m_id)
+			$.ajax({
+				url : "idCheck.do",
+				type : "post",
+				data : {"m_id" : m_id},
+				success : loadJson,
+				error : function(e){
+					console.log("에러")
+				}
+			})
+		});
+		
+		function loadJson(data){
+			if(data.id == undefined){
+				console.log("아이디 사용가능")
+				$('#join').prop("type", "submit");
+				alert("사용가능한 아이디입니다.")
+			}else{
+				console.log("아이디 중복")
+				alert("중복된 아이디입니다.")
+			}
+		}
+	</script>
 
 </body>
 

@@ -21,5 +21,12 @@
        set m_pw =#{m_pw}, m_name =#{m_name}, m_phone=#{m_phone}, m_email=#{m_email}, m_department=#{m_department}, m_type=#{m_type}
        where m_id = #{m_id}
    </update>
+   
+   <!-- 아이디 중복체크 -->
+   <select id="idCheck" resultType="kr.smart.mapper.MemberVO">
+       select *
+       from k_member
+       where m_id = ${m_id}
+   </select>
     
 </mapper>

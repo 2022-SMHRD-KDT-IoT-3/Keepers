@@ -11,4 +11,6 @@ public interface MemberMapper {
 
 	void memberUpdate(MemberVO vo);
 
+	MemberVO idCheck(String m_id);
+
 }
