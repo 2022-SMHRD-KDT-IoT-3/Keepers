@@ -2,5 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.smart.mapper.BoardMapper">
     
+     <!-- 게시글 목록  -->
+    <select id="boardList" resultType="kr.smart.mapper.BoardVO">
+        select *
+        from k_board
+    </select>
     
+    <!-- 게시글 작성 -->
+    <insert id="boardInsert" parameterType="kr.smart.mapper.BoardVO">
+        insert into k_board(b_title, b_content, b_id)
+        values(#{b_title}, #{b_content}, #{b_id})
+    </insert>
+    
+    <!-- 게시글 상세보기 -->
+    <select id="boardContents" resultType="kr.smart.mapper.BoardVO">
+        select *
+        from k_board
+        where b_seq = #{b_seq}
+    </select>
+    
+    <!-- 게시글 수정 -->
+    <update id="boardUpdate" parameterType="kr.smart.mapper.BoardVO">
+        update k_board
+        set b_title=#{b_title}, b_content=#{b_content}
+        where b_seq=#{b_seq}
+    </update>
+    
+    <!-- 게시글 삭제 -->
+    <delete id="boardDelete">
+        delete from k_board where b_seq=#{b_seq}
+    </delete>
 </mapper>

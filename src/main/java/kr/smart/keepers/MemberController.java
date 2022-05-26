@@ -40,7 +40,7 @@ public class MemberController {
 
 		mapper.joinInsert(vo);
 
-		return "";
+		return "main";
 	}
 
 	// 로그인 요청 메소드

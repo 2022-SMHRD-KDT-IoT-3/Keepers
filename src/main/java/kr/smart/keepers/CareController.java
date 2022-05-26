@@ -28,9 +28,24 @@ public class CareController {
 	@RequestMapping("/careInsert.do")
 	public String careInsert(CareVO vo) {
 		
-		mapper.careInsert(vo);
+		System.out.println(vo.toString());
+		int care_id = mapper.careInsert(vo);
 		
-		return "";
+		System.out.println(care_id);
+		
+		return "redirect:/deviceInsert.do?care_id="+care_id;
+	}
+	
+	//사용자 등록시 제품번호 생성 메소드
+	@RequestMapping("/deviceInsert.do")
+	public String deviceInsert(String care_id) {
+		
+		System.out.println(care_id);
+		int d_c_seq= Integer.parseInt(care_id);
+		System.out.println(d_c_seq);
+		mapper.deviceInsert(d_c_seq);
+		
+		return "careJoin";
 	}
 	
 	//사용자 전체 조회 메소드
