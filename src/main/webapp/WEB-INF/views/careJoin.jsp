@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -207,10 +207,11 @@ input {
 							<!-- End off slid item -->
 							<div class="slid_item">
 								<div class="home_text ">
+									<br>
 									<h2 class="text-white">
-										동구사회복지센터<strong>확장</strong>
+										Keepers 동구 5개 기관 <strong>추가 제휴 계약</strong>
 									</h2>
-									<h1 class="text-white">주소는 여기로</h1>
+									<h1 class="text-white">시범사업 5년간 시범 운영</h1>
 								</div>
 
 								<div class="home_btns m-top-40"></div>
@@ -248,9 +249,8 @@ input {
 								등록</div>
 							<hr>
 							<div style="margin-left: 150px; margin-right: 150px;">
-								<br>
-								 <input type="hidden" name="c_manager_id" value="${info.m_id}">
-								<br>
+								<br> <input type="hidden" name="c_manager_id"
+									value="${info.m_id}"> <br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이름</label> <input type="text"
@@ -316,13 +316,9 @@ input {
 			<div class="row">
 				<div class="maine_action">
 					<br>
-					<div class="col-md-8">
-						<div class="action_item text-center">
-							<h2 class="text-white text-uppercase">Keepers는 당신과 함께합니다</h2>
-						</div>
-					</div>
-					<br> <br>
-
+					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+						노인복지를 위해 노력합니다</h1>
+					<br>
 				</div>
 			</div>
 		</div>
@@ -331,9 +327,7 @@ input {
 
 	<!-- 회사소개 구간 -->
 	<div style="background-color: rgba(255, 166, 0, 0.327);">
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
 		style="background-color: rgba(255, 166, 0, 0.327);">
@@ -379,31 +373,31 @@ input {
 
 					<div class="col-md-3">
 						<div class="widget_item widget_latest sm-m-top-50">
-							<h5 class="text-white">제품소개</h5>
+							<h5 class="text-white">서비스 소개</h5>
 							<div class="widget_latst_item m-top-30">
 								<div class="item_icon">
-									<img src="assets/images/ltst-img-1.jpg" alt="" />
+									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p>무게센서를 통해 생활반응 확인</p>
 
 								</div>
 							</div>
 							<div class="widget_latst_item m-top-30">
 								<div class="item_icon">
-									<img src="assets/images/ltst-img-2.jpg" alt="" />
+									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p>12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
 							<div class="widget_latst_item m-top-30">
 								<div class="item_icon">
-									<img src="assets/images/ltst-img-3.jpg" alt="" />
+									<img src="resources/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p>24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -417,16 +411,19 @@ input {
 								<li class="m-top-20"><a
 									href="http://www.yangjibokji.or.kr/"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a
+									href="http://care1004.or.kr/main/main.php"><i
 										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+								<li class="m-top-20"><a
+									href="http://www.gjw.or.kr/agapesilver/"><i
+										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
+								<li class="m-top-20"><a
+									href="http://www.noin.or.kr/index.php?"><i
+										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
 								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i>A사회복지관</a></li>
+										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
 								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i> A사회복지관</a></li>
-								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i> A사회복지관</a></li>
-								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i> A사회복지관</a></li>
+										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>
 					</div>
@@ -443,11 +440,7 @@ input {
 			</div>
 		</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br> <br> <br>
+		<br> <br> <br> <br> <br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>

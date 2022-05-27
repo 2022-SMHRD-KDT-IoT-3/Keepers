@@ -20,12 +20,11 @@ public class BoardController {
 	
 	//게시판 전체보기(게시판 페이지 이동)
 	@RequestMapping("/boardList.do")
-	public String boardList(Model model) {
+	public void boardList(Model model) {
 		
-		List<BoardVO> list = mapper.boardList();
-		model.addAttribute("list", list);
+		//List<BoardVO> list = mapper.boardList();
+		//model.addAttribute("list", list);
 		
-		return "";
 	}
 	
 	// 게시글쓰기 페이지 이동

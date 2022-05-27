@@ -198,10 +198,11 @@ a {
 							<!-- End off slid item -->
 							<div class="slid_item">
 								<div class="home_text ">
+									<br>
 									<h2 class="text-white">
-										동구사회복지센터<strong>확장</strong>
+										Keepers 동구 5개 기관 <strong>추가 제휴 계약</strong>
 									</h2>
-									<h1 class="text-white">주소는 여기로</h1>
+									<h1 class="text-white">시범사업 5년간 시범 운영</h1>
 								</div>
 
 								<div class="home_btns m-top-40"></div>
@@ -234,9 +235,9 @@ a {
 							<div class="item_text">
 								<legend style="text-align: center; height: 35px;"> 내 정보
 								</legend>
-								<br> <br> <br>
-								<a href="logout.do"><button type="button" class="btn btn-warning">로그아웃</button></a>
-								<br> <br> <a href="/C_join.html"><h5
+								<br> <br> <br> <a href="logout.do"><button
+										type="button" class="btn btn-warning">로그아웃</button></a> <br>
+								<br> <a href="/C_join.html"><h5
 										style="color: rgb(14, 99, 14);">개인정보 수정을 원하시면 클릭하세요</h5></a>
 
 
@@ -417,11 +418,25 @@ a {
 	</section>
 
 
+	<!--회사 설명나누는 경계 구간-->
+	<section id="action" class="action bg-primary roomy-40"
+		style="background-color: rgba(0, 0, 0, 0.718);">
+		<div class="container">
+			<div class="row">
+				<div class="maine_action">
+					<br>
+					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+						노인복지를 위해 노력합니다</h1>
+					<br>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 	<!-- 회사소개 구간 -->
 	<div style="background-color: rgba(255, 166, 0, 0.327);">
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
 		style="background-color: rgba(255, 166, 0, 0.327);">
@@ -467,31 +482,31 @@ a {
 
 					<div class="col-md-3">
 						<div class="widget_item widget_latest sm-m-top-50">
-							<h5 class="text-white">제품소개</h5>
+							<h5 class="text-white">서비스 소개</h5>
 							<div class="widget_latst_item m-top-30">
 								<div class="item_icon">
-									<img src="assets/images/ltst-img-1.jpg" alt="" />
+									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p>무게센서를 통해 생활반응 확인</p>
 
 								</div>
 							</div>
 							<div class="widget_latst_item m-top-30">
 								<div class="item_icon">
-									<img src="assets/images/ltst-img-2.jpg" alt="" />
+									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p>12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
 							<div class="widget_latst_item m-top-30">
 								<div class="item_icon">
-									<img src="assets/images/ltst-img-3.jpg" alt="" />
+									<img src="resources/imgs/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>Lorem ipsum dolor sit amet, consectetur</p>
+									<p>24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -505,16 +520,19 @@ a {
 								<li class="m-top-20"><a
 									href="http://www.yangjibokji.or.kr/"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a
+									href="http://care1004.or.kr/main/main.php"><i
 										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+								<li class="m-top-20"><a
+									href="http://www.gjw.or.kr/agapesilver/"><i
+										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
+								<li class="m-top-20"><a
+									href="http://www.noin.or.kr/index.php?"><i
+										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
 								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i>A사회복지관</a></li>
+										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
 								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i> A사회복지관</a></li>
-								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i> A사회복지관</a></li>
-								<li class="m-top-20"><a href=""><i
-										class="fa fa-angle-right"></i> A사회복지관</a></li>
+										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>
 					</div>
@@ -531,15 +549,10 @@ a {
 			</div>
 		</div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br> <br> <br>
+		<br> <br> <br> <br> <br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>
-
 	<!-- JS includes -->
 
 	<script src="resources/js/vendor/jquery-1.11.2.min.js"></script>
