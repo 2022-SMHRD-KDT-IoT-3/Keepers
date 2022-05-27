@@ -257,7 +257,7 @@ input {
 							</c:choose>	
 						</select>
 						<button type="button" class="btn btn-warning"
-							style="margin-left: 10px;" onClick="monitorSelect">조회</button>
+							style="margin-left: 10px;"  id="monitorSelect">조회</button>
 					</div>
 					<br> <br> <br>
 
@@ -526,16 +526,24 @@ input {
 	<script src="resources/js/main.js"></script>
 	
 	<script>
-		function monitorSelect(){
-			var what = $('select[name=monitorSeq]').val()
-			console.log(what)
-			/* $.ajax({
+		$('#monitorSelect').click(function(){
+			var d_c_seq = $('select[name=monitorSeq]').val()
+			console.log(d_c_seq)
+			$.ajax({
 				url : "monitoringChart.do",
 				type : "get",
-				data : {"d_c_seq1" : },
+				data : {"d_c_seq1" : d_c_seq},
 				dataType : "json",
+				success : monitorResult,
+				error : function(e){
+					console.log("에러")
+				}
 				
-			}) */
+			})
+		})
+		
+		function monitorResult(res){
+			console.log(res)
 		}
 	</script>
 

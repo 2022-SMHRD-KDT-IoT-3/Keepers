@@ -157,7 +157,7 @@ input {
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
 						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
-						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="monitoringData.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
