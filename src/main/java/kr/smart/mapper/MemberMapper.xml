@@ -5,7 +5,7 @@
   <!-- 회원가입요청 -->
    <insert id="joinInsert" parameterType="kr.smart.mapper.MemberVO">
         insert into k_member
-        values(#{m_id}, #{m_pw}, #{m_name}, #{m_phone}, #{m_email}, #{m_department}, #{m_type})
+        values(#{m_id}, #{m_pw}, #{m_name}, #{m_phone}, #{m_email}, #{m_department}, #{m_type}, default)
     </insert>
     
    <!-- 로그인 요청 -->
@@ -23,10 +23,10 @@
    </update>
    
    <!-- 아이디 중복체크 -->
-   <select id="idCheck" resultType="kr.smart.mapper.MemberVO">
+   <select id="idCheck" parameterType="String" resultType="kr.smart.mapper.MemberVO">
        select *
        from k_member
-       where m_id = ${m_id}
+       where m_id = #{m_id}
    </select>
     
 </mapper>

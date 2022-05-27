@@ -27,7 +27,7 @@ public class CareController {
 	//사용자등록 요청 메소드
 	@RequestMapping("/careInsert.do")
 	public String careInsert(CareVO vo) {
-		
+		System.out.println("사용자등록");
 		System.out.println(vo.toString());
 		int care_id = mapper.careInsert(vo);
 		
@@ -45,7 +45,7 @@ public class CareController {
 		System.out.println(d_c_seq);
 		mapper.deviceInsert(d_c_seq);
 		
-		return "careJoin";
+		return "redirect:/main.do";
 	}
 	
 	//사용자 전체 조회 메소드

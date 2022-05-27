@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -155,7 +156,7 @@ input {
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="C_join.html">사용자 등록</a></li>
+						<li><a href="careJoin.do">사용자 등록</a></li>
 						<li><a href="C_select.html">사용자 조회</a></li>
 						<li><a href="C_monitor.html">사용자 모니터링</a></li>
 						<li><a href="board.html">공지사항 게시판</a></li>
@@ -239,7 +240,7 @@ input {
 					<!-- 독거노인 등록 폼 -->
 					<section
 						style="padding: 30px; margin-left: 150px; margin-right: 150px">
-						<form action=""
+						<form action="careInsert.do"
 							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px;">
 							<br> <br>
 							<div
@@ -248,12 +249,7 @@ input {
 							<hr>
 							<div style="margin-left: 150px; margin-right: 150px;">
 								<br>
-								<div class="mb-3">
-									<label for="disabledTextInput" id="inputPassword6"
-										class="form-label">관리자 아이디</label> <input type="text"
-										class="form-control" placeholder="복지사 아이디를 입력하세요"
-										name="c_manager_id">
-								</div>
+								 <input type="hidden" name="c_manager_id" value="${info.m_id}">
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"

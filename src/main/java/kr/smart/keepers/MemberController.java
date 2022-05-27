@@ -21,6 +21,7 @@ public class MemberController {
 	@RequestMapping("/main.do")
 	public void main() {
 		System.out.println("메인화면 접속");
+		
 	}
 
 	// 로그인페이지 이동 메소드
@@ -50,6 +51,7 @@ public class MemberController {
 	@RequestMapping("/idCheck.do")
 	public @ResponseBody MemberVO idCheck(String m_id) {
 		System.out.println("아이디 중복체크");
+		System.out.println(m_id);
 		
 		MemberVO vo = mapper.idCheck(m_id);
 		
@@ -59,14 +61,15 @@ public class MemberController {
 	// 로그인 요청 메소드
 	@RequestMapping("/loginSelect.do")
 	public String loginSelect(MemberVO vo, HttpSession session) {
-
+		System.out.println("로그인 요청");
+		System.out.println(vo.toString());
 		MemberVO info = mapper.loginSelect(vo);
 
 		if (info != null) {
 			session.setAttribute("info", info);
 		}
 
-		return "";
+		return "redirect:/main.do";
 	}
 
 	// 로그아웃 메소드
@@ -75,7 +78,7 @@ public class MemberController {
 
 		session.removeAttribute("info");
 
-		return "";
+		return "redirect:/login.do";
 	}
 
 	// 회원정보수정 페이지 이동메소드

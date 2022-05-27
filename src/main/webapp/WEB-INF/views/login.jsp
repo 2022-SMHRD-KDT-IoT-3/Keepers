@@ -51,15 +51,15 @@
 				<!-- To make this form functional, sign up at-->
 				<!-- https://startbootstrap.com/solution/contact-forms-->
 				<!-- to get an API token!-->
-				<form id="contactForm" data-sb-form-api-token="API_TOKEN">
+				
 					<!-- Email address input-->
-					<div class="row input-group-newsletter">
-						<div class="item_text">
+					<div >
+						<div >
 							<br>
-							<form action="">
+							<form action="loginSelect.do">
 								<div class="mb-3" style="text-align: left;">
 									<label for="exampleInputEmail1" class="form-label">아이디</label>
-									<input type="email" class="form-control"
+									<input type="text" class="form-control"
 										id="exampleInputEmail1" placeholder="아이디를 입력하세요" name="m_id">
 								</div>
 								<br>
@@ -74,35 +74,13 @@
 								</div>
 								<br> <br>
 								<div style="text-align: center;">
-									<button type="button" class="btn btn-lg btn-primary" disabled>로그인</button>
+									<button type="submit" class="btn btn-lg btn-primary">로그인</button>
 								</div>
 							</form>
 						</div>
 					</div>
-					<div class="invalid-feedback mt-2"
-						data-sb-feedback="email:required">An email is required.</div>
-					<div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email
-						is not valid.</div>
-					<!-- Submit success message-->
-					<!---->
-					<!-- This is what your users will see when the form-->
-					<!-- has successfully submitted-->
-					<div class="d-none" id="submitSuccessMessage">
-						<div class="text-center mb-3 mt-2">
-							<div class="fw-bolder">Form submission successful!</div>
-							To activate this form, sign up at <br /> <a
-								href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-						</div>
-					</div>
-					<!-- Submit error message-->
-					<!---->
-					<!-- This is what your users will see when there is-->
-					<!-- an error submitting the form-->
-					<div class="d-none" id="submitErrorMessage">
-						<div class="text-center text-danger mb-3 mt-2">Error sending
-							message!</div>
-					</div>
-				</form>
+					
+				
 			</div>
 		</div>
 	</div>
@@ -117,6 +95,5 @@
 	<!-- * *                               SB Forms JS                               * *-->
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-	<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

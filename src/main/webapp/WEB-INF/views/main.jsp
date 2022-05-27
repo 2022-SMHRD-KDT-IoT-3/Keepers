@@ -148,9 +148,9 @@ a {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
+						<li><a href="careSelect.do">사용자 조회</a></li>
 						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
+						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -235,7 +235,7 @@ a {
 								<legend style="text-align: center; height: 35px;"> 내 정보
 								</legend>
 								<br> <br> <br>
-								<button type="button" class="btn btn-warning">로그아웃</button>
+								<a href="logout.do"><button type="button" class="btn btn-warning">로그아웃</button></a>
 								<br> <br> <a href="/C_join.html"><h5
 										style="color: rgb(14, 99, 14);">개인정보 수정을 원하시면 클릭하세요</h5></a>
 

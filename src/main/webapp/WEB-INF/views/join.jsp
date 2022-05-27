@@ -301,8 +301,8 @@ input {
 								<div style="text-align: center;">
 									<button type="reset" class="btn btn-warning"
 										style="margin-right: 30px; font-size: 18px;">취소</button>
-									<button type="button" class="btn btn-warning" id="join"
-										style="margin-right: 30px; font-size: 18px;">등록</button>
+									<input type="button" class="btn btn-warning" id="join"
+										style="margin-right: 30px; font-size: 18px;" value="등록"></input>
 								</div>
 
 								<br> <br> <br>
@@ -488,21 +488,24 @@ input {
 				data : {"m_id" : m_id},
 				success : loadJson,
 				error : function(e){
-					console.log("에러")
+					console.log("에러");
 				}
 			})
 		});
 		
 		function loadJson(data){
-			if(data.id == undefined){
+			console.log(data.m_id)
+			if(data.m_id == undefined){
 				console.log("아이디 사용가능")
 				$('#join').prop("type", "submit");
 				alert("사용가능한 아이디입니다.")
 			}else{
 				console.log("아이디 중복")
 				alert("중복된 아이디입니다.")
+				$('#join').prop("type", "button");
 			}
 		}
+		
 	</script>
 
 </body>

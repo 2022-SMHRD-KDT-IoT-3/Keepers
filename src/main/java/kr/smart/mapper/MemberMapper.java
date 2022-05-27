@@ -5,12 +5,12 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface MemberMapper {
 
-	void joinInsert(MemberVO vo);
+	public void joinInsert(MemberVO vo);
 
-	MemberVO loginSelect(MemberVO vo);
+	public MemberVO loginSelect(MemberVO vo);
 
-	void memberUpdate(MemberVO vo);
+	public void memberUpdate(MemberVO vo);
 
-	MemberVO idCheck(String m_id);
+	public MemberVO idCheck(String m_id);
 
 }

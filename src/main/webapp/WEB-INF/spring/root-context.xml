@@ -13,7 +13,7 @@
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="jdbcUrl"
-			value="jdbc:mysql://project-db-stu.ddns.net:3307/keepers"></property>
+			value="jdbc:mysql://project-db-stu.ddns.net:3307/keepers?allowMultiQueries=true"></property>
 			<property name="username" value="keepers"></property>
 			<property name="password" value="keppers_user1234"></property>
 	</bean>	
