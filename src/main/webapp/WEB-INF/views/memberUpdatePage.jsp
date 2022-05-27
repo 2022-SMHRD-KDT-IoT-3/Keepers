@@ -36,7 +36,6 @@
 
 
 
-
 <!--For Plugins external css-->
 <!--<link rel="stylesheet" href="assets/css/plugins.css" />-->
 
@@ -48,7 +47,6 @@
 <link rel="stylesheet" href="resources/css/responsive.css" />
 
 <script src="resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
 
 
 
@@ -75,7 +73,7 @@ input {
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse">
-
+	
 
 	<!-- Preloader -->
 	<div id="loading" style="background-color: rgb(255, 119, 0);">
@@ -136,7 +134,7 @@ input {
 					</ul>
 				</div>
 				<div style="text-align: center; margin-bottom: 30px;">
-					<a class="navbar-brand" href="Main.html"> <img
+					<a class="navbar-brand" href="main.do"> <img
 						src="resources/imgs/logow.png" class="logo" alt=""
 						style="width: 210px;"> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -157,10 +155,10 @@ input {
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="C_join.html">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
+						<li><a href="careJoin.do">사용자 등록</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -253,7 +251,7 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">아이디</label> <input type="text"
-										class="form-control" placeholder="아이디를 입력하세요" name="m_id"
+										class="form-control" placeholder=${info.m_id} name="m_id"
 										readonly="readonly">
 
 
@@ -268,36 +266,35 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이름</label> <input type="text"
-										class="form-control" placeholder="이름를 입력하세요" name="m_name">
+										class="form-control" value=${info.m_name} name="m_name">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">전화번호</label> <input type="text"
-										class="form-control" placeholder="공백 없이 전화번호를 입력하세요"
+										class="form-control" value=${info.m_phone}
 										name="m_phone">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이메일</label> <input type="text"
-										class="form-control" placeholder="이메일을 입력하세요" name="m_email">
+										class="form-control" placeholder=${info.m_email} name="m_email">
 								</div>
 								<br> <br>
 								<div class="mb-3">
 									<label for="disabledSelect" class="form-label">소속 선택</label> <select
-										id="disabledSelect" class="form-select"
+										id="disabledSelect" class="form-select" name="m_department"
 										style="margin-right: 50px;">
-										<option>인사과</option>
-										<option>복지과</option>
-										<option>관리과</option>
+										<option value="인사과">인사과</option>
+										<option value="복지과">복지과</option>
+										<option value="관리과">관리과</option>
 									</select> <label for="disabledSelect" class="form-label">유형 선택</label> <select
-										id="disabledSelect" class="form-select">
-										<option>1유형</option>
-										<option>2유형</option>
-										<option>3유형</option>
+										id="disabledSelect" class="form-select" name="m_type">
+										<option value="B">1유형</option>
+										<option value="S">2유형</option>
+										<option value="J">3유형</option>
 									</select>
-
 								</div>
 								<br> <br>
 								<hr>
@@ -450,6 +447,8 @@ input {
 						<div style="width: 800px;">
 							<img src="resources/imgs/old.png" alt=""> <a href="#top"><img
 								src="resources/imgs/up.png" alt="" width="30px"></a>
+								<input type="hidden" id="type_value" value=${info.m_type}>
+								<input type="hidden" id="dept_value" value=${info.m_department}>
 						</div>
 					</div>
 
@@ -474,11 +473,22 @@ input {
 	<script src="resources/css/slick/slick.min.js"></script>
 	<script src="resources/js/jquery.collapse.js"></script>
 	<script src="resources/js/bootsnav.js"></script>
-
+	
 
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
+	<script>
+	//미완
+		$(document).ready(function (){
+			console.log("document ready")
+			let type_value = $('#type_value').val();
+			let dept_value = $('#dept_value').val();
+			console.log(type_value)
+			$('select[name=m_type]').val(type_value).prop("selected", true);
+			$('select[name=m_department]').val(dept_value).prop("selected", true);
+		})
+	</script>
 
 
 </body>

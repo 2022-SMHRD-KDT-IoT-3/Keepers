@@ -155,10 +155,10 @@ input {
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="C_join.html">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
+						<li><a href="careJoin.do">사용자 등록</a></li>
+						<li><a href="careSelect.do">사용자 조회</a></li>
+						<li><a href="monitoring.dol">사용자 모니터링</a></li>
+						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

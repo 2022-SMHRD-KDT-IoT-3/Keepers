@@ -157,9 +157,9 @@ input {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -457,7 +457,6 @@ input {
 	<script src="resources/css/slick/slick.min.js"></script>
 	<script src="resources/js/jquery.collapse.js"></script>
 	<script src="resources/js/bootsnav.js"></script>
-
 
 
 	<script src="resources/js/plugins.js"></script>

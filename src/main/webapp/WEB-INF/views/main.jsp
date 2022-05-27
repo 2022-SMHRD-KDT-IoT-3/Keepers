@@ -148,8 +148,8 @@ a {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="careSelect.do">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -237,7 +237,7 @@ a {
 								</legend>
 								<br> <br> <br> <a href="logout.do"><button
 										type="button" class="btn btn-warning">로그아웃</button></a> <br>
-								<br> <a href="/C_join.html"><h5
+								<br> <a href="memberUpdatePage.do"><h5
 										style="color: rgb(14, 99, 14);">개인정보 수정을 원하시면 클릭하세요</h5></a>
 
 

@@ -52,9 +52,10 @@ public class CareController {
 	@RequestMapping("/careSelect.do")
 	public void careSelect(String c_manager_id, Model model) {
 		
+		System.out.println(c_manager_id);
 		List<CareVO> list = mapper.careSelect(c_manager_id);
 		model.addAttribute("list", list);
-		
+		System.out.println(list.size());
 	}
 	
 	//사용자 정보수정 페이지 이동
