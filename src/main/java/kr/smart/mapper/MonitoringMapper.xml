@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.smart.mapper.MonitoringMapper">
+    
+    <!-- 사용자전체조회 -->
+    <select id="monitorSelect" parameterType="String" resultType="kr.smart.mapper.CareVO">
+        select *
+        from k_care
+        where c_manager_id = #{c_manager_id}
+    </select>
+    
+    <!-- 모니터링 차트조회-->
+    <select id="monitoringChart" resultType="kr.smart.mapper.ValueVO">
+    select v.v_weight, date_format(v_signdate, '%H:%i') as v_signdate
+	from k_value v, k_device d
+	where d.d_c_seq = #{d_c_seq}
+	and date_format(v_signdate, '%Y:%m:%d') = date_format(sysdate(), '%Y:%m:%d')
+	order by v.v_signdate;
+	</select>
+    
+</mapper>

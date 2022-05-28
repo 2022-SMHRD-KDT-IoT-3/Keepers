@@ -96,4 +96,15 @@ public class MemberController {
 
 		return "";
 	}
+	
+	// 안드로이드 로그인 요청 메소드
+    @RequestMapping("/andLogin.do")
+    public @ResponseBody MemberVO andLogin(MemberVO vo) {
+       // 안드로이드에서 로그인 요청시 로그인에 성공하게 되면
+       // MemberVO를 JSON형태로 변환해서 돌려주는 메소드
+       
+       MemberVO info = mapper.loginSelect(vo);
+       return info;
+       
+    }
 }

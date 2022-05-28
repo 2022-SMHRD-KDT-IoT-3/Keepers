@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.smart.mapper.CareMapper;
 import kr.smart.mapper.CareVO;
@@ -52,9 +53,10 @@ public class CareController {
 	@RequestMapping("/careSelect.do")
 	public void careSelect(String c_manager_id, Model model) {
 		
+		System.out.println(c_manager_id);
 		List<CareVO> list = mapper.careSelect(c_manager_id);
 		model.addAttribute("list", list);
-		
+		System.out.println(list.size());
 	}
 	
 	//사용자 정보수정 페이지 이동
@@ -80,4 +82,28 @@ public class CareController {
 		
 		return "";
 	}
+	
+    @RequestMapping("/andCareInsert.do")
+    public @ResponseBody void andLogin(CareVO vo) {
+       // 안드로이드에서 로그인 요청시 로그인에 성공하게 되면
+       // MemberVO를 JSON형태로 변환해서 돌려주는 메소드
+       
+       System.out.println("andCareReg");
+       mapper.CareInsert(vo);
+       
+    }
+    
+    @RequestMapping("/careList.do")
+    public @ResponseBody List<CareVO> careList(CareVO vo) {
+    System.out.println("[관리대상 리스트 요청] ");
+    List<CareVO> list = mapper.careList(vo);
+    return list;
+//    for(int i =0; i<list.size(); i++) {
+//    System.out.println(list.get(i).toString());
+//    }
+//    String json = new Gson().toJson(list);
+//    System.out.println("제이슨 결과2 = " + json);
+    }
+
+	
 }

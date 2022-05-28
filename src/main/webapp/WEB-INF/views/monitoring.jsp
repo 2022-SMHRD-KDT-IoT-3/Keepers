@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -135,7 +136,7 @@ input {
 					</ul>
 				</div>
 				<div style="text-align: center; margin-bottom: 30px;">
-					<a class="navbar-brand" href="Main.html"> <img
+					<a class="navbar-brand" href="main.do"> <img
 						src="resources/imgs/logow.png" class="logo" alt=""
 						style="width: 210px;"> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -156,10 +157,10 @@ input {
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="C_join.html">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
+						<li><a href="careJoin.do">사용자 등록</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -245,26 +246,27 @@ input {
 						모니터링</h2>
 					<hr>
 					<div style="float: right;">
-						<select class="form-select" aria-label="Default select example">
+						<select class="form-select" name="monitorSeq" aria-label="Default select example">
 							<option selected>사용자 선택</option>
-							<option value="1">노인1</option>
-							<option value="2">노인2</option>
-							<option value="3">노인3</option>
-							<option value="4">노인4</option>
-							<option value="5">노인5</option>
-							<option value="6">노인6</option>
+							<c:choose>
+								<c:when test = "${not empty list}">
+									<c:forEach var="vo" items="${list}" varStatus="i">
+										<option value="${vo.c_seq}">${vo.c_name}</option>
+									</c:forEach>
+								</c:when>
+							</c:choose>	
 						</select>
+					
 						<button type="button" class="btn btn-warning"
-							style="margin-left: 10px;">조회</button>
+							style="margin-left: 10px;" id="monitorSelect">조회</button>
 					</div>
 					<br> <br> <br>
 
 					<!--이 부분에 차트 넣으면 됩니다 일단 이미지로 시각화만 했어요!
                                 사이즈는 1920*600 정도가 적당해보입니다 -->
-					<div>
-						<img src="resources/imgs/line-chart.png" alt="" width="1700px"
-							height="400px">
-					</div>
+					<div class="panel" id="chart_p" style="padding:4%; height: 400px; width : 1700px; " >
+		                <canvas id="myChart" ></canvas>
+		            </div>
 					<br> <br>
 					<!-- 마지막 활동 시간 넣고 싶으면 이 곳 이용하세요 -->
 					<div style="text-align: center;">
@@ -522,6 +524,102 @@ input {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
+	
+	<script>
+		$('#monitorSelect').click(function(){
+			var d_c_seq = $('select[name=monitorSeq]').val()
+			console.log(d_c_seq)
+			$.ajax({
+				url : "monitoringChart.do",
+				type : "get",
+				data : {"d_c_seq1" : d_c_seq},
+				dataType : "json",
+				success : monitorResult,
+				error : function(e){
+					console.log("에러")
+				}
+				
+			})
+		})
+		
+		function monitorResult(result){
+			console.log(result[1])
+			
+			var testLabel = result[1].split(',');
+			var testValue = result[0].split(',');
+			console.log(testValue);
+			
+	          const labels1 = testLabel;
+	          const data1 = {
+	              labels: labels1,
+	              
+	              datasets: [{
+	                  label: '시간',
+	                  //100= 마지막에 넣어주기 최대범위설정 
+	                  data: testValue,
+	                  backgroundColor: [
+	                       //라인선 색(0.2 = 투명도 )
+	                       'rgb( 100, 110, 255, 0.5)',
+	                  ],
+	                  borderColor: [
+	                       // border 색 
+	                       'rgb( 100, 110, 255)',
+	                  ],
+	                  //선두께
+	                  borderWidth: 2,
+	                  
+	                  //둥근선 
+	                  tension: 0.3,
+	                  
+	                  pointBorderWidth: 0,
+	                  pointStyle: 'star'
+	                  
+	              }]
+	          };
+			
+	          const config1 = {
+	                  type: 'line',
+	                  data: data1,
+	                  options: {
+	                  	 layout : {
+	                           padding : {
+	                               bottom :40,
+	                               right :30,
+	                           }
+	                       },
+	                      scales: {
+	                          y: {
+	                              //0부터 시작하기
+	                              beginAtZero: true
+	                          },
+	                          X: {
+	                          showGrid: true,
+	                          display:true,
+	                          type: 'time',
+	                          time: {
+	                            parser: 'HH:mm:ss',
+	                            unit: 'hour',
+	                            displayFormats: {
+	                              hour: 'HH:mm'
+	                            },
+	                            tooltipFormat: 'D MMM YYYY - HH:mm:ss'
+	                          }
+	                          
+	                      	},
+	                      },
+	                      //비율유지 하지마라 
+	                      maintainAspectRatio:false
+	                  }
+	                  
+	              };
+	            
+	              const multichart_d = new Chart(
+	                  document.getElementById('myChart'),
+	                  config1
+	              );
+			
+		}
+	</script>
 
 </body>
 
