@@ -262,7 +262,7 @@ input {
 				<br> <br>
 
 				<form>
-					<table class="table table-striped"
+					<table class="table table-striped"  style="font-size: 20px;"
 						style="background-color: rgb(248, 234, 207);">
 						<thead style="text-align: center;">
 							<tr>
@@ -283,6 +283,10 @@ input {
 											<td>${vo.c_phone}</td>
 											<td>${vo.c_address}</td>
 											<td>${vo.c_memo}</td>
+											<td style="text-align: center;">
+		                                        <a href="careUpdatePage.do?c_seq=${vo.c_seq}"><button type="button">수정</button></a>
+	                                        </td>
+										</tr>
 									</c:forEach>
 								</c:when>
 							</c:choose>	

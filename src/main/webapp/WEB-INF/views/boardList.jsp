@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -134,7 +135,7 @@ input {
 					</ul>
 				</div>
 				<div style="text-align: center; margin-bottom: 30px;">
-					<a class="navbar-brand" href="Main.html"> <img
+					<a class="navbar-brand" href="main.do"> <img
 						src="resources/imgs/logow.png" class="logo" alt=""
 						style="width: 210px;"> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -155,10 +156,10 @@ input {
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 
-						<li><a href="C_join.html">사용자 등록</a></li>
-						<li><a href="C_select.html">사용자 조회</a></li>
-						<li><a href="C_monitor.html">사용자 모니터링</a></li>
-						<li><a href="board.html">공지사항 게시판</a></li>
+						<li><a href="careJoin.do">사용자 등록</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -254,43 +255,19 @@ input {
 									<tr>
 										<th scope="col">번호</th>
 										<th scope="col">제목</th>
-										<th scope="col">내용</th>
+										<th scope="col">작성자</th>
 										<th scope="col">등록일자</th>
 									</tr>
 								</thead>
 								<tbody>
+									<c:forEach var="list" items="${list}" varStatus="i">
 									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
+										<th scope="row">${i.count}</th>
+										<td><a href = "boardSelect.do?b_seq=${list.b_seq}">${list.b_title}</a></td>
+										<td>${list.b_id}</td>
+										<td>${list.b_signdate}</td>
 									</tr>
-									<tr>
-										<th scope="row">2</th>
-										<td>Jacob</td>
-										<td>Thornton</td>
-										<td>@fat</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
-									<tr>
-										<th scope="row">3</th>
-										<td colspan="2">Larry the Bird</td>
-										<td>@twitter</td>
-									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 

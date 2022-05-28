@@ -74,7 +74,6 @@ input {
 
 <body data-spy="scroll" data-target=".navbar-collapse">
 
-
 	<!-- Preloader -->
 	<div id="loading" style="background-color: rgb(255, 119, 0);">
 		<div id="loading-center">
@@ -134,7 +133,7 @@ input {
 					</ul>
 				</div>
 				<div style="text-align: center; margin-bottom: 30px;">
-					<a class="navbar-brand" href="Main.html"> <img
+					<a class="navbar-brand" href="main.do"> <img
 						src="resources/imgs/logow.png" class="logo" alt=""
 						style="width: 210px;"> <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
 					</a>
@@ -156,8 +155,8 @@ input {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="careSelect.do">사용자 조회</a></li>
-						<li><a href="monitoring.dol">사용자 모니터링</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -240,7 +239,7 @@ input {
 					<!-- 독거노인 등록 폼 -->
 					<section
 						style="padding: 30px; margin-left: 150px; margin-right: 150px">
-						<form action=""
+						<form action="careUpdate.do"
 							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px;">
 							<br> <br>
 							<div
@@ -252,39 +251,39 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">관리자 아이디</label> <input type="text"
-										class="form-control" placeholder="복지사 아이디를 입력하세요"
+										class="form-control" value=${info.m_id} readonly="readonly"
 										name="c_manager_id">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이름</label> <input type="text"
-										class="form-control" placeholder="이름을 입력하세요" name="c_name">
+										class="form-control" value=${vo.c_name} name="c_name">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">생년월일</label> <input type="date"
-										class="form-control" placeholder="생년월일을 선택하세요" name="c_birth">
+										class="form-control" value=${vo.c_birth} name="c_birth">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">전화번호</label> <input type="text"
-										class="form-control" placeholder="공백 없이 전화번호를 입력하세요"
+										class="form-control" value=${vo.c_phone}
 										name="c_phone">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">주소</label> <input type="text"
-										class="form-control" placeholder="주소를 입력하세요" name="c_address">
+										class="form-control" value=${vo.c_address} name="c_address">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">메모</label>
-									<textarea class="form-control" placeholder="특이사항을 입력하세요"
+									<textarea class="form-control" value=${vo.c_memo}
 										name="c_memo" style="border-radius: 8px;">
                 </textarea>
 								</div>
@@ -439,7 +438,6 @@ input {
 								src="resources/imgs/up.png" alt="" width="30px"></a>
 						</div>
 					</div>
-
 				</div>
 				<!-- End off col-md-3 -->
 			</div>
@@ -467,6 +465,9 @@ input {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
+	<script>
+		
+	</script>
 
 
 </body>

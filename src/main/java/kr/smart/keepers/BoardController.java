@@ -22,8 +22,8 @@ public class BoardController {
 	@RequestMapping("/boardList.do")
 	public void boardList(Model model) {
 		
-		//List<BoardVO> list = mapper.boardList();
-		//model.addAttribute("list", list);
+		List<BoardVO> list = mapper.boardList();
+		model.addAttribute("list", list);
 		
 	}
 	
@@ -43,13 +43,13 @@ public class BoardController {
 	}
 	
 	// 게시글 상세보기
-	@RequestMapping("/boardContents.do")
-	public String boardContents(int b_seq, Model model) {
-		
-		BoardVO vo = mapper.boardContents(b_seq);
+	@RequestMapping("/boardSelect.do")
+	public void boardSelect(int b_seq, Model model) {
+		System.out.println(b_seq);
+		BoardVO vo = mapper.boardSelect(b_seq);
+		System.out.println(vo.toString());
 		model.addAttribute("vo", vo);
 		
-		return "";
 	}
 	
 	// 게시글 수정하기
