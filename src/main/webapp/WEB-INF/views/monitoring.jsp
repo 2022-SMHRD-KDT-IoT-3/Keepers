@@ -256,17 +256,17 @@ input {
 								</c:when>
 							</c:choose>	
 						</select>
+					
 						<button type="button" class="btn btn-warning"
-							style="margin-left: 10px;"  id="monitorSelect">조회</button>
+							style="margin-left: 10px;" id="monitorSelect">조회</button>
 					</div>
 					<br> <br> <br>
 
 					<!--이 부분에 차트 넣으면 됩니다 일단 이미지로 시각화만 했어요!
                                 사이즈는 1920*600 정도가 적당해보입니다 -->
-					<div>
-						<img src="resources/imgs/line-chart.png" alt="" width="1700px"
-							height="400px">
-					</div>
+					<div class="panel" id="chart_p" style="padding:4%; height: 400px; width : 1700px; " >
+		                <canvas id="myChart" ></canvas>
+		            </div>
 					<br> <br>
 					<!-- 마지막 활동 시간 넣고 싶으면 이 곳 이용하세요 -->
 					<div style="text-align: center;">
@@ -542,8 +542,82 @@ input {
 			})
 		})
 		
-		function monitorResult(res){
-			console.log(res)
+		function monitorResult(result){
+			console.log(result[1])
+			
+			var testLabel = result[1].split(',');
+			var testValue = result[0].split(',');
+			console.log(testValue);
+			
+	          const labels1 = testLabel;
+	          const data1 = {
+	              labels: labels1,
+	              
+	              datasets: [{
+	                  label: '시간',
+	                  //100= 마지막에 넣어주기 최대범위설정 
+	                  data: testValue,
+	                  backgroundColor: [
+	                       //라인선 색(0.2 = 투명도 )
+	                       'rgb( 100, 110, 255, 0.5)',
+	                  ],
+	                  borderColor: [
+	                       // border 색 
+	                       'rgb( 100, 110, 255)',
+	                  ],
+	                  //선두께
+	                  borderWidth: 2,
+	                  
+	                  //둥근선 
+	                  tension: 0.3,
+	                  
+	                  pointBorderWidth: 0,
+	                  pointStyle: 'star'
+	                  
+	              }]
+	          };
+			
+	          const config1 = {
+	                  type: 'line',
+	                  data: data1,
+	                  options: {
+	                  	 layout : {
+	                           padding : {
+	                               bottom :40,
+	                               right :30,
+	                           }
+	                       },
+	                      scales: {
+	                          y: {
+	                              //0부터 시작하기
+	                              beginAtZero: true
+	                          },
+	                          X: {
+	                          showGrid: true,
+	                          display:true,
+	                          type: 'time',
+	                          time: {
+	                            parser: 'HH:mm:ss',
+	                            unit: 'hour',
+	                            displayFormats: {
+	                              hour: 'HH:mm'
+	                            },
+	                            tooltipFormat: 'D MMM YYYY - HH:mm:ss'
+	                          }
+	                          
+	                      	},
+	                      },
+	                      //비율유지 하지마라 
+	                      maintainAspectRatio:false
+	                  }
+	                  
+	              };
+	            
+	              const multichart_d = new Chart(
+	                  document.getElementById('myChart'),
+	                  config1
+	              );
+			
 		}
 	</script>
 

@@ -18,4 +18,8 @@ public interface CareMapper {
 	public void careDelete(int c_seq);
 
 	public void deviceInsert(int d_c_seq);
+
+	public void CareInsert(CareVO vo);
+
+	public List<CareVO> careList(CareVO vo);
 }
