@@ -3,7 +3,7 @@
 <mapper namespace="kr.smart.mapper.ValueMapper">
     
     <insert id="insertValue" parameterType="kr.smart.mapper.ValueVO">
-        insert into k_value values(default, #{d_seq}, #{v_weight} ,default)        
+        insert into k_value values(default, #{d_seq}, #{v_weight} ,default, #{v_bat})        
     </insert>
     
 </mapper>
