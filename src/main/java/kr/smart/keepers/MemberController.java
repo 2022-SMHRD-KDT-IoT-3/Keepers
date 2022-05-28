@@ -17,12 +17,6 @@ public class MemberController {
 	@Inject
 	private MemberMapper mapper;
 
-	// 메인페이지
-	@RequestMapping("/main.do")
-	public void main() {
-		System.out.println("메인화면 접속");
-		
-	}
 
 	// 로그인페이지 이동 메소드
 	@RequestMapping("/login.do")
@@ -67,15 +61,19 @@ public class MemberController {
 
 		if (info != null) {
 			session.setAttribute("info", info);
+			
+			return "redirect:/main.do";
+		}else {
+			return "redirect:/login.do";
 		}
 
-		return "redirect:/main.do";
+		
 	}
 
 	// 로그아웃 메소드
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
-
+		
 		session.removeAttribute("info");
 
 		return "redirect:/login.do";

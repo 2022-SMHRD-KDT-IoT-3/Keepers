@@ -39,4 +39,11 @@
         values(#{d_c_seq})
     </insert>
     
+    <!-- 사용자 한명 조회 -->
+    <select id="careLoad" resultType="kr.smart.mapper.CareVO">
+        select *
+        from k_care
+        where c_seq = #{c_seq}
+    </select>
+    
 </mapper>

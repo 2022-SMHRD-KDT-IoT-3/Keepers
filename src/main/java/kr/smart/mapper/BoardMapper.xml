@@ -6,6 +6,7 @@
     <select id="boardList" resultType="kr.smart.mapper.BoardVO">
         select *
         from k_board
+        order by b_signdate desc
     </select>
     
     <!-- 게시글 작성 -->
@@ -15,7 +16,7 @@
     </insert>
     
     <!-- 게시글 상세보기 -->
-    <select id="boardContents" resultType="kr.smart.mapper.BoardVO">
+    <select id="boardSelect" resultType="kr.smart.mapper.BoardVO">
         select *
         from k_board
         where b_seq = #{b_seq}

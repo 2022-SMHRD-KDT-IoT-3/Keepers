@@ -22,4 +22,6 @@ public interface CareMapper {
 	public void CareInsert(CareVO vo);
 
 	public List<CareVO> careList(CareVO vo);
+
+	public CareVO careLoad(int c_seq);
 }

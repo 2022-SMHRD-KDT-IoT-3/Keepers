@@ -12,7 +12,7 @@ public interface BoardMapper {
 
 	public void boardInsert(BoardVO vo);
 
-	public BoardVO boardContents(int b_seq);
+	public BoardVO boardSelect(int b_seq);
 
 	public void boardUpdate(BoardVO vo);
 

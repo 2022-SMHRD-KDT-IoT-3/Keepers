@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -65,7 +66,6 @@ a {
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse">
-
 
 	<!-- Preloader -->
 	<div id="loading" style="background-color: rgb(255, 119, 0);">
@@ -148,8 +148,10 @@ a {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
-						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자
+								조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자
+								모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -232,12 +234,17 @@ a {
 					<div class="col-md-6">
 						<div class="test_item fix" style="text-align: center;">
 
-							<div class="item_text">
+							<div class="item_text" style="font-size: 22px;">
 								<legend style="text-align: center; height: 35px;"> 내 정보
 								</legend>
-								<br> <br> <br> <a href="logout.do"><button
-										type="button" class="btn btn-warning">로그아웃</button></a> <br>
-								<br> <a href="memberUpdatePage.do"><h5
+								<br>
+								<div>${info.m_name}님</div>
+								<div>ID : ${info.m_id}</div>
+								<div>DEPT : ${info.m_department}</div>
+								<br>
+								<a href="logout.do"><button type="button"
+										class="btn btn-warning">로그아웃</button></a> <br> <br> <a
+									href="memberUpdatePage.do"><h5
 										style="color: rgb(14, 99, 14);">개인정보 수정을 원하시면 클릭하세요</h5></a>
 
 
@@ -248,55 +255,17 @@ a {
 
 					<a href="./board.html">
 						<div class="col-md-6">
-							<div class="test_item fix" style="text-align: center;">
+							<div class="test_item fix" style="text-align: center;"><a href="boardList.do">
 								<div class="item_text">
 									<legend style="text-align: center; height: 35px;">공지사항
 										게시판 </legend>
 
 									<section
-										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray">
-
-										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th scope="col">번호</th>
-													<th scope="col">제목</th>
-													<th scope="col">내용</th>
-													<th scope="col">등록일자</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<th scope="row">1</th>
-													<td>Mark</td>
-													<td>Otto</td>
-													<td>@mdo</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-
-											</tbody>
-										</table>
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray" id="boardLimit">
 
 									</section>
 								</div>
-							</div>
+							</div></a>
 
 						</div>
 					</a>
@@ -316,7 +285,7 @@ a {
 
 
 					<!-- 사용자 조회 -->
-					<a href="./C_select.html">
+					<a href="careSelect.do?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
 							<div class="test_item fix" style="text-align: center;">
 
@@ -325,48 +294,14 @@ a {
 										조회 </legend>
 									<br>
 									<section
-										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray">
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray" id="careLimit">
 
-										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th scope="col">번호</th>
-													<th scope="col">제목</th>
-													<th scope="col">내용</th>
-													<th scope="col">등록일자</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<th scope="row">1</th>
-													<td>Mark</td>
-													<td>Otto</td>
-													<td>@mdo</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-												<tr>
-													<th scope="row">2</th>
-													<td>Jacob</td>
-													<td>Thornton</td>
-													<td>@fat</td>
-												</tr>
-
-											</tbody>
-										</table>
 									</section>
+									
 								</div>
+								
 							</div>
+							
 						</div>
 					</a>
 
@@ -387,8 +322,6 @@ a {
 
 						</div>
 					</a>
-
-
 				</div>
 			</div>
 		</div>
@@ -398,24 +331,7 @@ a {
 
 
 
-	<!--회사 설명나누는 경계 구간-->
-	<section id="action" class="action bg-primary roomy-40"
-		style="background-color: rgba(0, 0, 0, 0.718);">
-		<div class="container">
-			<div class="row">
-				<div class="maine_action">
-					<br>
-					<div class="col-md-8">
-						<div class="action_item text-center">
-							<h2 class="text-white text-uppercase">Keepers는 당신과 함께합니다</h2>
-						</div>
-					</div>
-					<br> <br>
 
-				</div>
-			</div>
-		</div>
-	</section>
 
 
 	<!--회사 설명나누는 경계 구간-->
@@ -547,6 +463,7 @@ a {
 				</div>
 				<!-- End off col-md-3 -->
 			</div>
+			<input type="hidden" name="m_id" value=${info.m_id}>
 		</div>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
@@ -570,7 +487,85 @@ a {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
-
+	<script>
+		$(document).ready(function (){
+			console.log("document ready")
+			
+			var m_id = $('input[name=m_id]').val();
+			
+			//공지사항
+			$.ajax({
+				url : "boardLimit.do",
+				type : "get",
+				dataType : "json",
+				async : false,
+				success : boardLimit,
+				error : function(e){
+					console.log("공지사항 에러")
+				}
+			})
+			
+			console.log(m_id)
+			//사용자조회
+			$.ajax({
+				url : "careLimit.do",
+				type : "post",
+				data : {"c_manager_id" : m_id},
+				dataType : "json",
+				success : careLimit,
+				error : function(e){
+					console.log("사용자조회 에러")
+				}
+			})
+		})
+		
+		
+		function boardLimit(res){
+			console.log(res)
+			var html = "<table class='table table-striped'><thead>";
+				html += "<tr>";
+				html +=	"<th scope='col'></th>";
+				html +=	"<th scope='col'>제목</th>";
+				html +=	"<th scope='col'>작성자</th>";
+				html +=	"<th scope='col'>등록일자</th>"
+				html += "</tr></thead><tbody>";
+			$.each(res, (i, obj) => {
+				html += "<tr>";
+				html += "<th scope='row'>"+(i+1)+"</th>"
+				html += "<th>"+res[i].b_title+"</th>"
+				html += "<td>"+res[i].b_id+"</td>";
+				html += "<td>"+res[i].b_signdate+"</td>";
+				html += "</tr>";
+			});
+				html += "</tbody></table>";
+			
+			$('#boardLimit').html(html);
+		};
+		
+		function careLimit(res){
+			console.log(res)
+			var html = "<table class='table table-striped'><thead>";
+				html += "<tr>";
+				html +=	"<th scope='col'></th>";
+				html +=	"<th scope='col'>이름</th>";
+				html +=	"<th scope='col'>전화번호</th>";
+				html +=	"<th scope='col'>메모</th>"
+				html += "</tr></thead><tbody>";
+			$.each(res, (i, obj) => {
+				html += "<tr>";
+				html += "<th scope='row'>"+(i+1)+"</th>"
+				html += "<th>"+res[i].c_name+"</th>"
+				html += "<td>"+res[i].c_phone+"</td>";
+				html += "<td>"+res[i].c_memo+"</td>";
+				html += "</tr>";
+			});
+				html += "</tbody></table>";
+			
+			$('#careLimit').html(html);
+			
+		};
+	
+	</script>
 </body>
 
 </html>

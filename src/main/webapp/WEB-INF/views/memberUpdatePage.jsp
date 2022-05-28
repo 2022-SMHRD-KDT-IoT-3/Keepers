@@ -157,7 +157,7 @@ input {
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
 						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
-						<li><a href="monitoringData.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="monitoring?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -479,7 +479,6 @@ input {
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
 	<script>
-	//미완
 		$(document).ready(function (){
 			console.log("document ready")
 			let type_value = $('#type_value').val();

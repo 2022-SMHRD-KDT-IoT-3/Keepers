@@ -15,6 +15,10 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="resources/imgs/logow.png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
 
 <!--Google Font link-->
 <link
@@ -247,13 +251,16 @@ input {
 					<hr>
 					<div style="float: right;">
 						<select class="form-select" name="monitorSeq" aria-label="Default select example">
-							<option selected>사용자 선택</option>
 							<c:choose>
 								<c:when test = "${not empty list}">
+								<option selected>사용자 선택</option>
 									<c:forEach var="vo" items="${list}" varStatus="i">
 										<option value="${vo.c_seq}">${vo.c_name}</option>
 									</c:forEach>
 								</c:when>
+								<c:otherwise>
+								<option selected>사용자 선택</option>
+								</c:otherwise>
 							</c:choose>	
 						</select>
 					
@@ -264,7 +271,7 @@ input {
 
 					<!--이 부분에 차트 넣으면 됩니다 일단 이미지로 시각화만 했어요!
                                 사이즈는 1920*600 정도가 적당해보입니다 -->
-					<div class="panel" id="chart_p" style="padding:4%; height: 400px; width : 1700px; " >
+					<div class="panel" id="chart_p" style="text-align:center; padding:20px; height: 600px;">
 		                <canvas id="myChart" ></canvas>
 		            </div>
 					<br> <br>
@@ -272,8 +279,7 @@ input {
 					<div style="text-align: center;">
 						<h1>
 							마지막 활동 시간은 <strong
-								style="background-color: rgb(159, 254, 159); border-radius: 8px;">P.M
-								3:15 </strong>입니다
+								style="background-color: rgb(159, 254, 159); border-radius: 8px;" id="lastAct"> </strong>입니다
 						</h1>
 					</div>
 
@@ -298,21 +304,7 @@ input {
 								<legend style="text-align: center; height: 35px;"> 생활반응
 									확인 </legend>
 								<br>
-								<section>
-
-									<img src="resources/imgs/on.png" alt="" width="180px"> <br>
-									<br>
-									<h2
-										style="background-color: rgb(159, 254, 159); display: inline; border-radius: 5px;">
-										<strong>활동중</strong>
-									</h2>
-									<!-- 무반응시 사용할 부분                                    
-                                    <img src="./imgs/off.png" alt="" width="200px">
-                                    <br>
-                                    <br>
-                                    <h2 style="background-color: rgb(228, 234, 163); display: inline; border-radius: 5px;"><strong>무반응</strong></h2>
-                             -->
-									<br> <br>
+								<section id="presentAct">
 								</section>
 							</div>
 						</div>
@@ -335,13 +327,8 @@ input {
 											<th scope="col">메모</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">김도은</th>
-											<td>01000000000</td>
-											<td>동구 서석동</td>
-											<td>커피좋아함</td>
-										</tr>
+									<tbody id = "monitoringInfo">
+										
 									</tbody>
 								</table>
 							</section>
@@ -525,48 +512,82 @@ input {
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
 	
-	<script>
+	<script type="text/javascript">
 		$('#monitorSelect').click(function(){
 			var d_c_seq = $('select[name=monitorSeq]').val()
 			console.log(d_c_seq)
 			$.ajax({
 				url : "monitoringChart.do",
 				type : "get",
-				data : {"d_c_seq1" : d_c_seq},
+				data : {"d_c_seq" : d_c_seq},
 				dataType : "json",
+				async : false,
 				success : monitorResult,
 				error : function(e){
-					console.log("에러")
+					console.log("chart에러")
 				}
 				
+			})
+			
+			
+			$.ajax({
+				url : "monitoringAct.do",
+				type: "get",
+				data : {"d_c_seq" : d_c_seq},
+				dataType : "json",
+				success : monitorAct,
+				async : false,
+				error : function(e){
+					console.log("act에러")
+				}
+			})
+			
+			$.ajax({
+				url : "monitorInfo.do",
+				type: "get",
+				data : {"d_c_seq" : d_c_seq},
+				dataType : "json",
+				success : function(res){
+					var html = "<tr>";
+					html += "<th scope='row'>"+res.c_name+"</th>"
+					html += "<td>"+res.c_phone+"</td>"
+					html += "<td>"+res.c_address+"</td>"
+					html += "<td>"+res.c_memo+"</td>"
+					html += "</tr>";
+					
+					$('#monitoringInfo').html(html)
+				},
+				error : function(e){
+					console.log("info에러")
+				}
 			})
 		})
 		
 		function monitorResult(result){
-			console.log(result[1])
 			
-			var testLabel = result[1].split(',');
 			var testValue = result[0].split(',');
+			var testLabel = result[1].split(',');
 			console.log(testValue);
+			console.log(testLabel);
 			
 	          const labels1 = testLabel;
 	          const data1 = {
 	              labels: labels1,
 	              
 	              datasets: [{
-	                  label: '시간',
+	                  label: '활동시간',
 	                  //100= 마지막에 넣어주기 최대범위설정 
 	                  data: testValue,
 	                  backgroundColor: [
 	                       //라인선 색(0.2 = 투명도 )
-	                       'rgb( 100, 110, 255, 0.5)',
+	                       'rgb( 255,165,0, 0.5)',
 	                  ],
 	                  borderColor: [
 	                       // border 색 
-	                       'rgb( 100, 110, 255)',
+	                       'rgb( 255,165,0)',
 	                  ],
 	                  //선두께
-	                  borderWidth: 2,
+	                  borderWidth: 4,
 	                  
 	                  //둥근선 
 	                  tension: 0.3,
@@ -583,9 +604,9 @@ input {
 	                  options: {
 	                  	 layout : {
 	                           padding : {
-	                               bottom :40,
-	                               right :30,
-	                           }
+	                        	   top :20,
+	                               bottom :20
+	                           },
 	                       },
 	                      scales: {
 	                          y: {
@@ -618,7 +639,38 @@ input {
 	                  config1
 	              );
 			
-		}
+		};
+		
+		
+		function monitorAct(result){
+			console.log(result)
+			var lastAct = "";
+			$.each(result, (index, obj) => {
+				if(obj.v_weight > 10){
+					lastAct = obj.v_signdate;
+					return false;
+				}
+			});
+			$('#lastAct').text(lastAct);
+			
+			var html = "";
+			if(result[0].v_weight >10){
+				html += "<img src='resources/imgs/on.png' width='180px'> <br>"
+				html += "<br>"
+				html += "<h2"
+				html +="	style='background-color: rgb(159, 254, 159); display: inline; border-radius: 5px;'>"
+				html +="	<strong >활동중</strong>"
+				html +="</h2>"
+			}else{
+                html += "<img src='./imgs/off.png' width='200px'>"
+                html += "<br>"
+                html += "<br>"
+                html += "<h2 style='background-color: rgb(228, 234, 163); display: inline; border-radius: 5px;'><strong>무반응</strong></h2>"
+			}
+			$('#presentAct').html(html);
+			
+			
+		};
 	</script>
 
 </body>

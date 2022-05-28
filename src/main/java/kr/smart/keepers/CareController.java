@@ -61,17 +61,24 @@ public class CareController {
 	
 	//사용자 정보수정 페이지 이동
 	@RequestMapping("/careUpdatePage.do")
-	public void careUpdatePage() {
+	public void careUpdatePage(int c_seq, Model model) {
+	
+		CareVO vo = mapper.careLoad(c_seq);
+		model.addAttribute("vo", vo);
+		System.out.println(vo.toString());
 		
 	}
+	
 	
 	//사용자 정보수정 요청
 	@RequestMapping("/careUpdate.do")
 	public String careUpdate(CareVO vo) {
 		
+		System.out.println(vo.toString());
 		mapper.careUpdate(vo);
+		String c_manager_id = vo.getC_manager_id();
 		
-		return "";
+		return "redirect:/careSelect.do?c_manager_id="+c_manager_id;
 	}
 	
 	//사용자 삭제 요청

@@ -25,27 +25,31 @@ public class MonitoringController {
 	
 	// 모니터링 페이지이동 메소드
 	@RequestMapping("/monitoring.do")
-	public void careSelect(String c_manager_id, Model model) {
+	public String careSelect(String c_manager_id, Model model) {
 		
 		System.out.println(c_manager_id);
 		List<CareVO> list = mapper.monitorSelect(c_manager_id);
 		model.addAttribute("list", list);
-		System.out.println(list.size());
+		if(list.size()== 0) {
+			return "redirect:/careJoin.do";
+		}else {
+			return "monitoring";
+		}
 	
 	}
 	
 	
 	//모니터링차트 조회
 	@RequestMapping("/monitoringChart.do")
-	public @ResponseBody String monitoringChart(String d_c_seq1, Model model) {
+	public @ResponseBody String monitoringChart(int d_c_seq) {
 		Gson gson = new Gson();
 		String[] array = new String[2];
 		
 		System.out.println("차트조회");
-		int d_c_seq = Integer.parseInt(d_c_seq1);
 		
 		System.out.println(d_c_seq);
 		ArrayList<ValueVO> list = mapper.monitoringChart(d_c_seq);
+		System.out.println(list.size());
 		
 		String chartValue = "" + list.get(0).getV_weight() ;
 		for(int i = 1; i<list.size(); i++) {
@@ -65,6 +69,39 @@ public class MonitoringController {
 		
 		return result;
 	}
+	
+	
+	//모니터링 활동중 조회
+	@RequestMapping("/monitoringAct.do")
+	public @ResponseBody String monitoringAct(int d_c_seq) {
+		System.out.println("활동중 체크");
+		
+		ArrayList<ValueVO> list = mapper.monitoringAct(d_c_seq);
+		System.out.println(list.size());
+		Gson gson = new Gson();
+		String result = gson.toJson(list);
+		
+		return result;
+	}
+	
+	
+	//모니터링 사용자 정보 조회
+	@RequestMapping("/monitorInfo.do")
+	public @ResponseBody CareVO monitorInfo(int d_c_seq) {
+		System.out.println("모니터링 사용자정보조회");
+		
+		CareVO vo = mapper.monitoringInfo(d_c_seq);
+		
+		return vo;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
