@@ -90,27 +90,22 @@ public class CareController {
 		return "";
 	}
 	
-    @RequestMapping("/andCareInsert.do")
-    public @ResponseBody void andLogin(CareVO vo) {
-       // 안드로이드에서 로그인 요청시 로그인에 성공하게 되면
-       // MemberVO를 JSON형태로 변환해서 돌려주는 메소드
-       
-       System.out.println("andCareReg");
-       mapper.CareInsert(vo);
-       
-    }
-    
-    @RequestMapping("/careList.do")
-    public @ResponseBody List<CareVO> careList(CareVO vo) {
-    System.out.println("[관리대상 리스트 요청] ");
-    List<CareVO> list = mapper.careList(vo);
-    return list;
-//    for(int i =0; i<list.size(); i++) {
-//    System.out.println(list.get(i).toString());
-//    }
-//    String json = new Gson().toJson(list);
-//    System.out.println("제이슨 결과2 = " + json);
-    }
+	// 안드로이드 사용자 등록 요청
+	@RequestMapping("/andCareInsert.do")
+	public @ResponseBody void andCareInsert(CareVO vo) {
+		
+		System.out.println("안드로이드 사용자 등록 요청");
+		mapper.andCareInsert(vo);
+		
+	}
+
+	// 안드로이드 사용자 리스트 요청
+	@RequestMapping("/andCareList.do")
+	public @ResponseBody List<CareVO> careList(CareVO vo) {
+	System.out.println("[안드로이드 사용자 리스트 요청] ");
+	List<CareVO> list = mapper.andCareList(vo);
+	return list;
+	}
 
 	
 }

@@ -13,4 +13,6 @@ public interface MemberMapper {
 
 	public MemberVO idCheck(String m_id);
 
+	public MemberVO andloginSelect(MemberVO vo);
+
 }

@@ -6,4 +6,8 @@
         insert into k_value values(default, #{d_seq}, #{v_weight} ,default, #{v_bat})        
     </insert>
     
+    <select id="andSelectValue" resultType="kr.smart.mapper.ValueVO">
+        select v_weight from k_value where d_seq = #{d_seq}
+        </select>
+    
 </mapper>
