@@ -95,9 +95,9 @@ public class MemberController {
 
 	// 안드로이드 로그인 요청 메소드
 	@RequestMapping("/andLoginSelect.do")
-	public @ResponseBody MemberVO andLogin(MemberVO vo) {
+	public @ResponseBody MemberVO andLoginSelect(MemberVO vo) {
 		System.out.println("[안드로이드 로그인 요청]");
-		MemberVO info = mapper.andloginSelect(vo);
+		MemberVO info = mapper.andLoginSelect(vo);
 		return info;
 
 	}
