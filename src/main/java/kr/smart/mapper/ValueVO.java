@@ -12,6 +12,7 @@ public class ValueVO {
 	private String d_seq ;
 	private String v_weight ;
 	private String v_signdate ;
+	String v_bat;
 	
 	//제품테이블(k_device)
 	// int d_seq 중복
@@ -19,12 +20,14 @@ public class ValueVO {
 	private String d_signdate; //제품 등록일자
 	
 	//센서값생성자
-	public ValueVO(String v_seq, String d_seq, String v_weight, String v_signdate) {
+	public ValueVO(String v_seq, String d_seq, String v_weight, String v_signdate, String v_bat) {
 		super();
 		this.v_seq = v_seq;
 		this.d_seq = d_seq;
 		this.v_weight = v_weight;
 		this.v_signdate = v_signdate;
+		this.v_bat = v_bat;
+				
 	}
 
 	//제품 생성자

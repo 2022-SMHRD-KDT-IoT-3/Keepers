@@ -17,4 +17,8 @@ public interface BoardMapper {
 	public void boardUpdate(BoardVO vo);
 
 	public void boardDelete(int b_seq);
+	
+	List<BoardVO> andBoardList();
+	
+	List<BoardVO> andBoardSelect(BoardVO vo);
 }

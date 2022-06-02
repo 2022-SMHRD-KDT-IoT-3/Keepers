@@ -46,4 +46,18 @@
         where c_seq = #{c_seq}
     </select>
     
+    
+    <!-- 안드로이드 관리대상 등록요청 -->
+	<insert id="andCareInsert" parameterType="kr.smart.mapper.CareVO">
+		insert into k_care(c_manager_id, c_name, c_birth, c_phone, c_address,
+		c_memo)
+		values(#{c_manager_id}, #{c_name}, #{c_birth}, #{c_phone}, #{c_address}, "1")
+	</insert>
+
+	<!-- 안드로이드 관리대상 리스트 조회 요청  -->
+	<select id="andCareList" parameterType="kr.smart.mapper.CareVO" resultType="kr.smart.mapper.CareVO">
+		select * from k_care where c_manager_id = #{c_manager_id}
+	</select>
+    
+    
 </mapper>

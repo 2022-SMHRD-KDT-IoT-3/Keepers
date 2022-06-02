@@ -33,4 +33,20 @@
     <delete id="boardDelete">
         delete from k_board where b_seq=#{b_seq}
     </delete>
+    
+    <!-- 안드로이드 게시글 목록 조회 -->
+    <select id="andBoardList" resultType="kr.smart.mapper.BoardVO">
+        select *
+        from k_board
+        order by b_signdate desc
+    </select>
+    
+    <!-- 안드로이드 게시글 상세보기 -->
+    <select id="andBoardSelect" parameterType="kr.smart.mapper.BoardVO" resultType="kr.smart.mapper.BoardVO">
+		select * from k_board where b_seq = #{b_seq}
+	</select>
+    
+    
+    
+    
 </mapper>

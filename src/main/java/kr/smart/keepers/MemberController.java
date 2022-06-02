@@ -17,11 +17,10 @@ public class MemberController {
 	@Inject
 	private MemberMapper mapper;
 
-
 	// 로그인페이지 이동 메소드
 	@RequestMapping("/login.do")
 	public void login() {
-		
+
 	}
 
 	// 회원가입페이지 이동 메소드
@@ -35,20 +34,20 @@ public class MemberController {
 	public String joinInsert(MemberVO vo) {
 		System.out.println(vo.toString());
 		System.out.println("회원가입 요청");
-		
+
 		mapper.joinInsert(vo);
 
 		return "redirect:/login.do";
 	}
-	
-	//아이디 중복확인 메소드
+
+	// 아이디 중복확인 메소드
 	@RequestMapping("/idCheck.do")
 	public @ResponseBody MemberVO idCheck(String m_id) {
 		System.out.println("아이디 중복체크");
 		System.out.println(m_id);
-		
+
 		MemberVO vo = mapper.idCheck(m_id);
-		
+
 		return vo;
 	}
 
@@ -61,19 +60,18 @@ public class MemberController {
 
 		if (info != null) {
 			session.setAttribute("info", info);
-			
+
 			return "redirect:/main.do";
-		}else {
+		} else {
 			return "redirect:/login.do";
 		}
 
-		
 	}
 
 	// 로그아웃 메소드
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
-		
+
 		session.removeAttribute("info");
 
 		return "redirect:/login.do";
@@ -94,15 +92,13 @@ public class MemberController {
 
 		return "";
 	}
-	
+
 	// 안드로이드 로그인 요청 메소드
-    @RequestMapping("/andLogin.do")
-    public @ResponseBody MemberVO andLogin(MemberVO vo) {
-       // 안드로이드에서 로그인 요청시 로그인에 성공하게 되면
-       // MemberVO를 JSON형태로 변환해서 돌려주는 메소드
-       
-       MemberVO info = mapper.loginSelect(vo);
-       return info;
-       
-    }
+	@RequestMapping("/andLoginSelect.do")
+	public @ResponseBody MemberVO andLogin(MemberVO vo) {
+		System.out.println("[안드로이드 로그인 요청]");
+		MemberVO info = mapper.andloginSelect(vo);
+		return info;
+
+	}
 }
