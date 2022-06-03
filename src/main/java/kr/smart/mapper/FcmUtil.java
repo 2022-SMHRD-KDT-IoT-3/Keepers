@@ -2,6 +2,7 @@ package kr.smart.mapper;
 
 import java.io.FileInputStream;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.google.auth.oauth2.GoogleCredentials;
@@ -14,16 +15,19 @@ import com.google.firebase.messaging.Message;
 
 @Component
 public class FcmUtil {
+	
+	 @Value("${app.firebase-configuration-file}")
+	 
 	public void send_FCM(String tokenId, String title, String content) {
 		String c_name = new PushDAO().sendPush();
 		
 		try {
 			//json파일경로
-			FileInputStream refreshToken = new FileInputStream("C:\\Users\\smhrd\\git\\Keepers\\src\\main\\resources\\keepers-d6d9f-firebase-adminsdk-4n4se-14aa04052c.json");
+			FileInputStream refreshToken = new FileInputStream("C:\\Users\\smhrd\\git\\Keepers\\src\\main\\webapp\\resources\\keepers-ff906-firebase-adminsdk-msucq-4b9cf61c5b.json");
 			
 			FirebaseOptions options = new FirebaseOptions.Builder()
 					.setCredentials(GoogleCredentials.fromStream(refreshToken))
-					.setDatabaseUrl("firebase-adminsdk-4n4se@keepers-d6d9f.iam.gserviceaccount.com")
+					.setDatabaseUrl("firebase-adminsdk-msucq@keepers-ff906.iam.gserviceaccount.com")
 					.build();
 			
 			//firebase처음 호출시 initializing처리
@@ -31,7 +35,7 @@ public class FcmUtil {
 				FirebaseApp.initializeApp(options);
 			}
 			//안드로이드 토큰
-			String registrationToken = "dRfuHnk1STWk1eFWjunHtN:APA91bEuy22afVyGJOtVgeFCtCOb0M_6r0YUtMQbxOjqz61X8kgFC8SjVYVv1ujbkvTb8OuIbujwOxP5dfrazXhUhrNanoW9wf8Br4p1sCd3xvyflC5BYJA1seQhHdWYP71dIwTs4me6";
+			String registrationToken = "f3fFFBm8TiyEVvHtWe-Nks:APA91bHFLLpIDKJfOfVUyS_7MToELXGbXqSWmNKeKA7aqUisN87Tbz-TfEJEqYgzoMNjOW1WQ7LVHh7nOYH6BIN54zOA5VnfG0ToComn0HtEyGbXXayXY94MfeC3DQaqPx6LqUitzhLI";
 		
 			//message 작성
 			Message msg = Message.builder()

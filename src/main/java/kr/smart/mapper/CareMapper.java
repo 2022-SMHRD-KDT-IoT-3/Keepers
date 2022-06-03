@@ -26,4 +26,6 @@ public interface CareMapper {
 	public void andCareInsert(CareVO vo);
 
 	public List<CareVO> andCareList(CareVO vo);
+
+	public CareVO selectAny(int c_seq);
 }

@@ -12,8 +12,10 @@ import kr.smart.mapper.PushDAO;
 public class Scheduler {
 	String start = "";
 	String end = "";
+	int cnt = 0;
 	
-	@Scheduled(cron = "0 32 12 * * *")
+	//테스트
+	@Scheduled(cron = "0 35 16 * * *")
 	public void test() {
 		System.out.println("스케쥴러 호출");
 		start = "12:01:00";
@@ -45,12 +47,7 @@ public class Scheduler {
 			if(result.get(i)>10) {
 				break;
 			}else {
-				String tokenId="TokenId";
-				String title="title";
-				String content="content";
-				
-				FcmUtil FcmUtil = new FcmUtil();
-				FcmUtil.send_FCM(tokenId, title, content);
+				cnt++;
 			}
 		}
 	}
@@ -65,12 +62,17 @@ public class Scheduler {
 			if(result.get(i)>10) {
 				break;
 			}else {
-				String tokenId="TokenId";
-				String title="title";
-				String content="content";
-				
-				FcmUtil FcmUtil = new FcmUtil();
-				FcmUtil.send_FCM(tokenId, title, content);
+				cnt++;
+				if(cnt == 2) {
+					String tokenId="TokenId";
+					String title="title";
+					String content="content";
+					
+					FcmUtil FcmUtil = new FcmUtil();
+					FcmUtil.send_FCM(tokenId, title, content);
+					
+					cnt = 0;
+				}
 			}
 		}
 	}
@@ -85,12 +87,17 @@ public class Scheduler {
 			if(result.get(i)>10) {
 				break;
 			}else {
-				String tokenId="TokenId";
-				String title="title";
-				String content="content";
-				
-				FcmUtil FcmUtil = new FcmUtil();
-				FcmUtil.send_FCM(tokenId, title, content);
+				cnt++;
+				if(cnt == 2) {
+					String tokenId="TokenId";
+					String title="title";
+					String content="content";
+					
+					FcmUtil FcmUtil = new FcmUtil();
+					FcmUtil.send_FCM(tokenId, title, content);
+					
+					cnt = 0;
+				}
 			}
 		}
 	}
@@ -105,12 +112,17 @@ public class Scheduler {
 			if(result.get(i)>10) {
 				break;
 			}else {
-				String tokenId="TokenId";
-				String title="title";
-				String content="content";
-				
-				FcmUtil FcmUtil = new FcmUtil();
-				FcmUtil.send_FCM(tokenId, title, content);
+				cnt++;
+				if(cnt == 2) {
+					String tokenId="TokenId";
+					String title="title";
+					String content="content";
+					
+					FcmUtil FcmUtil = new FcmUtil();
+					FcmUtil.send_FCM(tokenId, title, content);
+					
+					cnt = 0;
+				}
 			}
 		}
 	}

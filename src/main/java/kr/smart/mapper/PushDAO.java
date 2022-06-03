@@ -22,19 +22,7 @@ public class PushDAO {
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 	
-	//푸쉬알림 전송
-		@RequestMapping("/fcmtest.do")
-		public @ResponseBody String fcmtest(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception{
-			
-			String tokenId="ss";
-			String title="제목";
-			String content="내용";
-			
-			FcmUtil FcmUtil = new FcmUtil();
-			FcmUtil.send_FCM(tokenId, title, content);
-			
-			return "test";
-		}
+	
 		
 		//푸쉬알림 사용자정보 
 		public String sendPush(){
@@ -44,9 +32,9 @@ public class PushDAO {
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 
-					String url = "jdbc:mysql://localhost:3306/test";
-					String dbid = "root";
-					String dbpw = "12345";
+					String url = "jdbc:mysql://project-db-stu.ddns.net:3307/keepers";
+					String dbid = "keepers";
+					String dbpw = "keppers_user1234";
 
 					conn = DriverManager.getConnection(url, dbid, dbpw);
 					if (conn != null) {
@@ -91,9 +79,9 @@ public class PushDAO {
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 
-					String url = "jdbc:mysql://localhost:3306/test";
-					String dbid = "root";
-					String dbpw = "12345";
+					String url = "jdbc:mysql://project-db-stu.ddns.net:3307/keepers";
+					String dbid = "keepers";
+					String dbpw = "keppers_user1234";
 
 					conn = DriverManager.getConnection(url, dbid, dbpw);
 					if (conn != null) {

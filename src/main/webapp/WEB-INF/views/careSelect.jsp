@@ -248,7 +248,7 @@ input {
 							사용자 조회</div>
 						<hr>
 
-						<select class="form-select" aria-label="Default select example">
+						<select id="selectanyone" name="selectanyone" class="form-select" aria-label="Default select example">
 							<option selected>사용자 선택</option>
 							<c:choose>
 								<c:when test = "${not empty list}">
@@ -273,7 +273,7 @@ input {
 								<th scope="col">메모</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="tbody">
 							<c:choose>
 								<c:when test = "${not empty list}">
 									<c:forEach var="vo" items="${list}" varStatus="i">
@@ -284,7 +284,8 @@ input {
 											<td>${vo.c_address}</td>
 											<td>${vo.c_memo}</td>
 											<td style="text-align: center;">
-		                                        <a href="careUpdatePage.do?c_seq=${vo.c_seq}"><button type="button">수정</button></a>
+		                                        <a href="careUpdatePage.do?c_seq=${vo.c_seq}"><button type="button" class="btn btn-warning btn-sm">수정</button></a>
+		                                        <a href="careDelete.do?c_seq=${vo.c_seq}&c_manager_id=${vo.c_manager_id}"><button type="button" class="btn btn-warning btn-sm">삭제</button></a>
 	                                        </td>
 										</tr>
 									</c:forEach>
@@ -470,6 +471,42 @@ input {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('#selectanyone').on('change', function(){
+				var c_seq = $('select[name=selectanyone]').val()
+				console.log(c_seq)
+				$.ajax({
+					url : "selectAny.do",
+					type: "post",
+					data : {"c_seq" : c_seq},
+					dataType : "json",
+					success : selectAnyone,
+					error : function(e){
+						console.log("선택한 사용자 조회 에러")
+					}
+				})
+				
+			})
+		})
+		
+		function selectAnyone(result){
+			var html = "<tr>";
+			html += "<th scope='row'>1</th>";
+			html += "<td>"+result.c_name+"</td>";
+			html += "<td>"+result.c_phone+"</td>";
+			html += "<td>"+result.c_address+"</td>";
+			html += "<td>"+result.c_memo+"</td>";
+			html += "<td style='text-align: center;'>"
+            html += "    <a href='careUpdatePage.do?c_seq="+result.c_seq+"'><button type='button' class='btn btn-warning btn-sm'>수정</button></a>";
+            html += "    <a href='careDelete.do?c_seq="+result.c_seq+"&c_manager_id="+result.c_manager_id+"'><button type='button' class='btn btn-warning btn-sm'>삭제</button></a>";
+            html +="</td>";
+		html += "</tr>";
+		
+		$('#tbody').html(html);
+		}
+	</script>
 </body>
 
 </html>

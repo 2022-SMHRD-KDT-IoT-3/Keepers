@@ -19,6 +19,13 @@
         where c_manager_id = #{c_manager_id}
     </select>
     
+    <!-- 선택한 사용자 조회 -->
+    <select id="selectAny" resultType="kr.smart.mapper.CareVO">
+        select *
+        from k_care
+        where c_seq = #{c_seq}
+    </select>
+    
     <!--  사용자 정보수정  -->
     <update id="careUpdate" parameterType="kr.smart.mapper.CareVO">
         update k_care
