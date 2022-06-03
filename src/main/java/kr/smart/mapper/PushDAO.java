@@ -21,13 +21,12 @@ public class PushDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-	
+	int c_seq = 16;
 	
 		
 		//푸쉬알림 사용자정보 
 		public String sendPush(){
 			System.out.println("푸쉬알림접근");
-			int c_seq = 16; 
 			String c_name ="";
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
@@ -74,7 +73,7 @@ public class PushDAO {
 		public ArrayList<Double> check1(String start, String end){
 			System.out.println("시간별체크 접근");
 			ArrayList<Double> result = new ArrayList<>();
-			int c_seq = 16; 
+			 
 			String c_name ="";
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
