@@ -45,6 +45,7 @@ public class Scheduler {
 		System.out.println(result.get(0));
 		for(int i =0; i<result.size(); i++) {
 			if(result.get(i)>10) {
+				cnt = 0;
 				break;
 			}else {
 				cnt++;
@@ -60,6 +61,7 @@ public class Scheduler {
 		System.out.println(result.get(0));
 		for(int i =0; i<result.size(); i++) {
 			if(result.get(i)>10) {
+				cnt = 0;
 				break;
 			}else {
 				cnt++;
@@ -85,6 +87,7 @@ public class Scheduler {
 		System.out.println(result.get(0));
 		for(int i =0; i<result.size(); i++) {
 			if(result.get(i)>10) {
+				cnt = 0;
 				break;
 			}else {
 				cnt++;
@@ -110,6 +113,7 @@ public class Scheduler {
 		System.out.println(result.get(0));
 		for(int i =0; i<result.size(); i++) {
 			if(result.get(i)>10) {
+				cnt = 0;
 				break;
 			}else {
 				cnt++;
