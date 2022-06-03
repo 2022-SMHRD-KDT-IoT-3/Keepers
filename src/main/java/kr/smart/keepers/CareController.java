@@ -100,14 +100,23 @@ public class CareController {
 		return "redirect:/careSelect.do?c_manager_id="+c_manager_id;
 	}
 	
-	// 안드로이드 사용자 등록 요청
-	@RequestMapping("/andCareInsert.do")
-	public @ResponseBody void andCareInsert(CareVO vo) {
-		
-		System.out.println("안드로이드 사용자 등록 요청");
-		mapper.andCareInsert(vo);
-		
-	}
+    // 안드로이드 사용자 등록 요청
+    @RequestMapping("/andCareInsert.do")
+    public @ResponseBody String andCareInsert(CareVO vo) {
+            
+            System.out.println("안드로이드 사용자 등록 요청");
+            System.out.println(vo.toString());
+            if (vo.getC_name() != "") {
+                    mapper.andCareInsert(vo);
+                    System.out.println("안드로이드 사용자 등록 성공");
+                    return "success";
+            } else {
+                    System.out.println("안드로이드 사용자 등록 실패");
+                    return "fail";
+            }
+            
+            
+    }
 
 	// 안드로이드 사용자 리스트 요청
 	@RequestMapping("/andCareList.do")
