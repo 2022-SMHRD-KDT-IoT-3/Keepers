@@ -31,13 +31,12 @@ public class MemberController {
 
 	// 회원가입 요청 메소드
 	@RequestMapping("/joinInsert.do")
-	public String joinInsert(MemberVO vo) {
+	public @ResponseBody void joinInsert(MemberVO vo) {
 		System.out.println(vo.toString());
 		System.out.println("회원가입 요청");
 
 		mapper.joinInsert(vo);
 
-		return "redirect:/login.do";
 	}
 
 	// 아이디 중복확인 메소드
@@ -53,17 +52,16 @@ public class MemberController {
 
 	// 로그인 요청 메소드
 	@RequestMapping("/loginSelect.do")
-	public String loginSelect(MemberVO vo, HttpSession session) {
+	public @ResponseBody String loginSelect(MemberVO vo, HttpSession session) {
 		System.out.println("로그인 요청");
 		System.out.println(vo.toString());
 		MemberVO info = mapper.loginSelect(vo);
 
 		if (info != null) {
 			session.setAttribute("info", info);
-
-			return "redirect:/main.do";
+			return "success";
 		} else {
-			return "redirect:/login.do";
+			return "fail";
 		}
 
 	}
@@ -85,12 +83,12 @@ public class MemberController {
 
 	// 회원정보수정 요청 메소드
 	@RequestMapping("/memberUpdate.do")
-	public String memberUpdate(MemberVO vo, HttpSession session) {
+	public @ResponseBody void memberUpdate(MemberVO vo, HttpSession session) {
 
+		System.out.println("업데이트 : "+ vo.toString());
 		mapper.memberUpdate(vo);
 		session.setAttribute("info", vo);
 
-		return "";
 	}
 
 	// 안드로이드 로그인 요청 메소드

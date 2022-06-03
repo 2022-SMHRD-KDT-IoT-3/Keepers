@@ -33,6 +33,9 @@ public class CareController {
 	public String careInsert(CareVO vo) {
 		System.out.println("사용자등록");
 		System.out.println(vo.toString());
+		if(vo.getC_memo().equals("")) {
+			vo.setC_memo("-");
+		}
 		int care_id = mapper.careInsert(vo);
 		
 		System.out.println(care_id);

@@ -56,7 +56,7 @@
 					<div >
 						<div >
 							<br>
-							<form action="loginSelect.do">
+							<form>
 								<div class="mb-3" style="text-align: left;">
 									<label for="exampleInputEmail1" class="form-label">아이디</label>
 									<input type="text" class="form-control"
@@ -74,7 +74,7 @@
 								</div>
 								<br> <br>
 								<div style="text-align: center;">
-									<button type="submit" class="btn btn-lg btn-primary">로그인</button>
+									<button type="button" id="login" class="btn btn-lg btn-primary">로그인</button>
 								</div>
 							</form>
 						</div>
@@ -95,5 +95,30 @@
 	<!-- * *                               SB Forms JS                               * *-->
 	<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
 	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$('#login').click(function(){
+			$.ajax({
+				url : "loginSelect.do",
+				type : "post",
+				data : {"m_id" : $('input[name=m_id]').val(),
+					"m_pw" : $('input[name=m_pw]').val()
+					},
+				success : function(res){
+					if(res == "fail") {
+						alert("아이디와 비밀번호를 다시 확인해주세요")
+					}else{
+						location.replace("/keepers/main.do")
+					}
+					
+				},
+				error : function(res){
+					
+				}
+			});
+			
+		});
+	</script>
 </body>
 </html>

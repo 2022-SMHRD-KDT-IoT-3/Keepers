@@ -280,8 +280,7 @@ input {
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">메모</label>
 									<textarea class="form-control" placeholder="특이사항을 입력하세요"
-										name="c_memo" style="border-radius: 8px;">
-                </textarea>
+										name="c_memo" style="border-radius: 8px; resize: none;"></textarea>
 								</div>
 								<br> <br>
 								<hr>

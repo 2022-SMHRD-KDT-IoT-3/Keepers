@@ -239,7 +239,7 @@ input {
 
 					<!-- 복지사 회원가입 폼 -->
 					<section style="padding: 30px;">
-						<form action=""
+						<form  
 							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px; width: auto; margin: 100px;">
 							<br> <br>
 							<div
@@ -251,7 +251,7 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">아이디</label> <input type="text"
-										class="form-control" placeholder=${info.m_id} name="m_id"
+										class="form-control" value=${info.m_id} name="m_id"
 										readonly="readonly">
 
 
@@ -260,7 +260,7 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">비밀번호</label> <input type="password"
-										class="form-control" placeholder="비밀번호를 입력하세요" name="m_pw">
+										class="form-control" placeholder="비밀번호를 입력하세요" value=${info.m_pw} name="m_pw">
 								</div>
 								<br>
 								<div class="mb-3">
@@ -279,7 +279,7 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이메일</label> <input type="text"
-										class="form-control" placeholder=${info.m_email} name="m_email">
+										class="form-control" value=${info.m_email} name="m_email">
 								</div>
 								<br> <br>
 								<div class="mb-3">
@@ -301,7 +301,7 @@ input {
 								<div style="text-align: center;">
 									<button type="reset" class="btn btn-warning"
 										style="margin-right: 30px; font-size: 18px;">취소</button>
-									<button type="submit" class="btn btn-warning"
+									<button type="button" class="btn btn-warning" id="memberUpdate"
 										style="margin-right: 30px; font-size: 18px;">수정</button>
 								</div>
 
@@ -486,6 +486,29 @@ input {
 			console.log(type_value)
 			$('select[name=m_type]').val(type_value).prop("selected", true);
 			$('select[name=m_department]').val(dept_value).prop("selected", true);
+		})
+		
+		
+		$('#memberUpdate').click(function(){
+			$.ajax({
+				url : "memberUpdate.do",
+				type : "post",
+				data : {"m_id" : $('input[name=m_id]').val(),
+					"m_pw" : $('input[name=m_pw]').val(),
+					'm_name' : $('input[name=m_name]').val(),
+					'm_phone' : $('input[name=m_phone]').val(),
+					'm_email' : $('input[name=m_email]').val(),
+					'm_department' : $('select[name=m_department]').val(),
+					'm_type' : $('select[name=m_type]').val()},
+				success : function(res){
+					alert('회원정보수정 성공')
+				},
+				error : function(e){
+					console.log("회원정보수정 에러")
+				}
+				
+				
+			})
 		})
 	</script>
 

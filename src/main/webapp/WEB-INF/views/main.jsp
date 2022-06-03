@@ -306,7 +306,7 @@ a {
 					</a>
 
 					<!-- 사용자 모니터링 -->
-					<a href="C_monitor.html">
+					<a href="monitoring?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
 							<div class="test_item fix" style="text-align: center;">
 								<div class="item_text">

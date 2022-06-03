@@ -284,8 +284,8 @@ input {
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">메모</label>
 									<textarea class="form-control" value=${vo.c_memo}
-										name="c_memo" style="border-radius: 8px;">
-                </textarea>
+										name="c_memo" style="border-radius: 8px; resize: none;" ></textarea>
+									<input type="hidden" name="c_seq" value=${vo.c_seq}>
 								</div>
 								<br> <br>
 								<hr>

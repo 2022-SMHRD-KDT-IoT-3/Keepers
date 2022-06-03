@@ -228,7 +228,7 @@ input {
 
 					<!-- 복지사 회원가입 폼 -->
 					<section style="padding: 30px;">
-						<form action="joinInsert.do"
+						<form
 							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px; width: auto; margin: 100px;">
 							<br> <br>
 							<div
@@ -301,8 +301,8 @@ input {
 								<div style="text-align: center;">
 									<button type="reset" class="btn btn-warning"
 										style="margin-right: 30px; font-size: 18px;">취소</button>
-									<input type="button" class="btn btn-warning" id="join"
-										style="margin-right: 30px; font-size: 18px;" value="등록"></input>
+									<input type="button" class="btn btn-warning" name="join" id="join"
+										style="margin-right: 30px; font-size: 18px;" disabled value="등록"></input>
 								</div>
 
 								<br> <br> <br>
@@ -497,14 +497,38 @@ input {
 			console.log(data.m_id)
 			if (data.m_id == undefined) {
 				console.log("아이디 사용가능")
-				$('#join').prop("type", "submit");
+				$('input[name=join]').prop("disabled", false);
 				alert("사용가능한 아이디입니다.")
 			} else {
 				console.log("아이디 중복")
 				alert("중복된 아이디입니다.")
-				$('#join').prop("type", "button");
+				$('input[name=join]').prop("disabled", true);
 			}
 		}
+		
+		$('#join').click(function(){
+			var id = $('input[name=join]').attr('id');
+			console.log(id)
+			$.ajax({
+				url : "joinInsert.do",
+				type : "post",
+				data : {"m_id" : $("input[name=m_id]").val(),
+					"m_pw" : $("input[name=m_pw]").val(),
+					"m_name" : $("input[name=m_name]").val(),
+					"m_phone" : $('input[name=m_phone]').val(),
+					'm_email' : $('input[name=m_email]').val(),
+					'm_department' : $('select[name=m_department]').val(),
+					'm_type' : $('select[name=m_type]').val()
+					},
+				success : function(res){
+					alert("회원가입 성공")
+					location.replace("/keepers/login.do")
+				},
+				error : function(e){
+					alert("회원가입 실패, 다시 입력해주세요")
+				}
+			})
+		})
 	</script>
 
 </body>
