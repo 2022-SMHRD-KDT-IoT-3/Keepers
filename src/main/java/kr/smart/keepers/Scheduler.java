@@ -49,6 +49,16 @@ public class Scheduler {
 				break;
 			}else {
 				cnt++;
+				if(cnt == 2) {
+					String tokenId="TokenId";
+					String title="title";
+					String content="content";
+					
+					FcmUtil FcmUtil = new FcmUtil();
+					FcmUtil.send_FCM(tokenId, title, content);
+					
+					cnt = 0;
+				}
 			}
 		}
 	}
