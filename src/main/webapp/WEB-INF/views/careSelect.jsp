@@ -284,8 +284,8 @@ input {
 											<td>${vo.c_address}</td>
 											<td>${vo.c_memo}</td>
 											<td style="text-align: center;">
-		                                        <a href="careUpdatePage.do?c_seq=${vo.c_seq}"><button type="button" class="btn btn-warning btn-sm">수정</button></a>
-		                                        <a href="careDelete.do?c_seq=${vo.c_seq}&c_manager_id=${vo.c_manager_id}"><button type="button" class="btn btn-warning btn-sm">삭제</button></a>
+		                                        <a href="careUpdatePage.do?c_seq=${vo.c_seq}"><button type="button" style="background-color:#F0AD4E !important; border-radius:10px;color: #333;">수정</button></a>
+		                                        <a href="careDelete.do?c_seq=${vo.c_seq}&c_manager_id=${vo.c_manager_id}"><button type="button" style="background-color:#F0AD4E !important; border-radius:10px;color: #333;">삭제</button></a>
 	                                        </td>
 										</tr>
 									</c:forEach>
@@ -499,8 +499,8 @@ input {
 			html += "<td>"+result.c_address+"</td>";
 			html += "<td>"+result.c_memo+"</td>";
 			html += "<td style='text-align: center;'>"
-            html += "    <a href='careUpdatePage.do?c_seq="+result.c_seq+"'><button type='button' class='btn btn-warning btn-sm'>수정</button></a>";
-            html += "    <a href='careDelete.do?c_seq="+result.c_seq+"&c_manager_id="+result.c_manager_id+"'><button type='button' class='btn btn-warning btn-sm'>삭제</button></a>";
+            html += "    <a href='careUpdatePage.do?c_seq="+result.c_seq+"'><button type='button' style='background-color:#F0AD4E !important; border-radius:10px;color: #333;'>수정</button></a>";
+            html += "    <a href='careDelete.do?c_seq="+result.c_seq+"&c_manager_id="+result.c_manager_id+"'><button type='button' style='background-color:#F0AD4E !important; border-radius:10px;color: #333;'>삭제</button></a>";
             html +="</td>";
 		html += "</tr>";
 		
