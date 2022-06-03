@@ -37,7 +37,7 @@
     
     <!-- 안드로이드 활동중 체크 -->
     <select id="andMonitoringAct" resultType="kr.smart.mapper.ValueVO">
-        select v.v_weight, v.v_signdate
+        select v.v_weight, v.v_signdate, v.v_bat
 		from k_value v, k_device d
 		where d.d_c_seq = #{d_c_seq}
 		and d.d_seq = v.d_seq
