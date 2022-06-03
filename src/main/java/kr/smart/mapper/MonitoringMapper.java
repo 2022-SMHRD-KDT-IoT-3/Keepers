@@ -16,6 +16,11 @@ public interface MonitoringMapper {
 
 	public CareVO monitoringInfo(int d_c_seq);
 
+	public ArrayList<ValueVO> andMonitoringAct(int d_c_seq);
+	
+	
+
+
 
 
 }

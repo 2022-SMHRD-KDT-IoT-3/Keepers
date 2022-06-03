@@ -35,5 +35,12 @@
        from k_member
        where m_id = #{m_id} and m_pw = #{m_pw}
    </select>
+   
+      <!-- 안드로이드 내 정보 조회 요청 -->
+   <select id="andMyInfoSelect" parameterType="kr.smart.mapper.MemberVO" resultType="kr.smart.mapper.MemberVO">
+       select *
+       from k_member
+       where m_id = #{m_id}
+   </select>
     
 </mapper>

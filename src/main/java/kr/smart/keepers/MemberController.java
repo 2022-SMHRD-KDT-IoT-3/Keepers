@@ -99,6 +99,16 @@ public class MemberController {
 		System.out.println("[안드로이드 로그인 요청]");
 		MemberVO info = mapper.andLoginSelect(vo);
 		return info;
-
 	}
+	
+	// 안드로이드 내 정보 조회 요청 메소드
+	@RequestMapping("/andMyInfoSelect.do")
+	public @ResponseBody MemberVO andMyInfoSelect(MemberVO vo) {
+		System.out.println("[안드로이드 내 정보 조회 요청]");
+		MemberVO info = mapper.andMyInfoSelect(vo);
+		System.out.println(info.toString());
+		return info;
+	}
+	
+	
 }

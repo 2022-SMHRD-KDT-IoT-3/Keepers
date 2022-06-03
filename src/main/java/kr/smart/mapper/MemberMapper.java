@@ -15,4 +15,6 @@ public interface MemberMapper {
 
 	public MemberVO andLoginSelect(MemberVO vo);
 
+	public MemberVO andMyInfoSelect(MemberVO vo);
+
 }

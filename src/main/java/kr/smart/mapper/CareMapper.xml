@@ -58,7 +58,7 @@
 	<insert id="andCareInsert" parameterType="kr.smart.mapper.CareVO">
 		insert into k_care(c_manager_id, c_name, c_birth, c_phone, c_address,
 		c_memo)
-		values(#{c_manager_id}, #{c_name}, #{c_birth}, #{c_phone}, #{c_address}, "1")
+		values(#{c_manager_id}, #{c_name}, #{c_birth}, #{c_phone}, #{c_address}, #{c_memo})
 	</insert>
 
 	<!-- 안드로이드 관리대상 리스트 조회 요청  -->

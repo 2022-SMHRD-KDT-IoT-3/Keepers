@@ -95,8 +95,17 @@ public class MonitoringController {
 		return vo;
 	}
 	
-	
-	
+	//안드로이드 모니터링 활동중 조회
+	@RequestMapping("/andMonitoringAct.do")
+	public @ResponseBody String andMonitoringAct(int d_c_seq) {
+		System.out.println("[안드로이드 활동중 체크]");
+		ArrayList<ValueVO> list = mapper.andMonitoringAct(d_c_seq);
+		System.out.println("센서값 목록 크기 : " + list.size());
+		Gson gson = new Gson();
+		String result = gson.toJson(list);
+		
+		return result;
+	}
 	
 	
 	
