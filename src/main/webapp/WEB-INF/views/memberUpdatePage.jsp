@@ -52,7 +52,7 @@
 
 <style>
 a {
-	font-size: 17px;
+	font-size: 19px;
 }
 
 #gotop {
@@ -73,7 +73,7 @@ input {
 </head>
 
 <body data-spy="scroll" data-target=".navbar-collapse">
-	
+
 
 	<!-- Preloader -->
 	<div id="loading" style="background-color: rgb(255, 119, 0);">
@@ -156,8 +156,10 @@ input {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
-						<li><a href="monitoring?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자
+								조회</a></li>
+						<li><a href="monitoring?c_manager_id=${info.m_id}">사용자
+								모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -239,11 +241,11 @@ input {
 
 					<!-- 복지사 회원가입 폼 -->
 					<section style="padding: 30px;">
-						<form  
+						<form
 							style="background-color: rgba(251, 195, 91, 0.469); border-radius: 30px; width: auto; margin: 100px;">
 							<br> <br>
 							<div
-								style="text-align: center; color: rgb(87, 87, 87); font-size: 25px; font-weight: 600;">
+								style="text-align: center; color: rgb(87, 87, 87); font-size: 32px; font-weight: 600;">
 								복지사 정보수정</div>
 							<hr>
 							<div style="margin-left: 180px; margin-right: 180px;">
@@ -251,7 +253,7 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">아이디</label> <input type="text"
-										class="form-control" value=${info.m_id} name="m_id"
+										class="form-control" value=${info.m_id } name="m_id"
 										readonly="readonly">
 
 
@@ -260,26 +262,28 @@ input {
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">비밀번호</label> <input type="password"
-										class="form-control" placeholder="비밀번호를 입력하세요" value=${info.m_pw} name="m_pw">
+										class="form-control" placeholder="비밀번호를 입력하세요"
+										value=${info.m_pw } name="m_pw">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이름</label> <input type="text"
-										class="form-control" value=${info.m_name} name="m_name">
+										class="form-control" value=${info.m_name } name="m_name">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">전화번호</label> <input type="text"
-										class="form-control" value=${info.m_phone}
+										class="form-control" value=${info.m_phone
+										}
 										name="m_phone">
 								</div>
 								<br>
 								<div class="mb-3">
 									<label for="disabledTextInput" id="inputPassword6"
 										class="form-label">이메일</label> <input type="text"
-										class="form-control" value=${info.m_email} name="m_email">
+										class="form-control" value=${info.m_email } name="m_email">
 								</div>
 								<br> <br>
 								<div class="mb-3">
@@ -331,7 +335,7 @@ input {
 			<div class="row">
 				<div class="maine_action">
 					<br>
-					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+					<h1 class="text-white" style="text-align: center;">Keepers는
 						노인복지를 위해 노력합니다</h1>
 					<br>
 				</div>
@@ -345,7 +349,7 @@ input {
 		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
-		style="background-color: rgba(255, 166, 0, 0.327);">
+		style="background-color: rgba(255, 166, 0, 0.327); color: #2f3234;">
 		<div class="container">
 			<div class="row">
 				<div class="widget_area">
@@ -394,7 +398,8 @@ input {
 									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>무게센서를 통해 생활반응 확인</p>
+									<p style="color: black;">무게센서를 통해 생활반응 확인</p>
+
 
 								</div>
 							</div>
@@ -403,7 +408,7 @@ input {
 									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>12시간 무반응시 복지사에게 1차 알림</p>
+									<p style="color: black;">12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
@@ -412,7 +417,7 @@ input {
 									<img src="resources/imgs/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>24시간 무반응시 복지사에게 방문 알림</p>
+									<p style="color: black;">24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -424,20 +429,21 @@ input {
 							<h5 class="text-white">제휴 기관</h5>
 							<ul class="m-top-20">
 								<li class="m-top-20"><a
-									href="http://www.yangjibokji.or.kr/"><i
+									href="http://www.yangjibokji.or.kr/" style="color: black;"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://care1004.or.kr/main/main.php"><i
-										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+									href="http://care1004.or.kr/main/main.php"
+									style="color: black;"><i class="fa fa-angle-right"></i>
+										두암종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://www.gjw.or.kr/agapesilver/"><i
+									href="http://www.gjw.or.kr/agapesilver/" style="color: black;"><i
 										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
 								<li class="m-top-20"><a
-									href="http://www.noin.or.kr/index.php?"><i
+									href="http://www.noin.or.kr/index.php?" style="color: black;"><i
 										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>
@@ -447,20 +453,20 @@ input {
 						<div style="width: 800px;">
 							<img src="resources/imgs/old.png" alt=""> <a href="#top"><img
 								src="resources/imgs/up.png" alt="" width="30px"></a>
-								<input type="hidden" id="type_value" value=${info.m_type}>
-								<input type="hidden" id="dept_value" value=${info.m_department}>
 						</div>
 					</div>
 
 				</div>
 				<!-- End off col-md-3 -->
 			</div>
+			<input type="hidden" name="m_id" value=${info.m_id}>
 		</div>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>
+
 	<!-- JS includes -->
 
 	<script src="resources/js/vendor/jquery-1.11.2.min.js"></script>
@@ -473,41 +479,44 @@ input {
 	<script src="resources/css/slick/slick.min.js"></script>
 	<script src="resources/js/jquery.collapse.js"></script>
 	<script src="resources/js/bootsnav.js"></script>
-	
+
 
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
 	<script>
-		$(document).ready(function (){
-			console.log("document ready")
-			let type_value = $('#type_value').val();
-			let dept_value = $('#dept_value').val();
-			console.log(type_value)
-			$('select[name=m_type]').val(type_value).prop("selected", true);
-			$('select[name=m_department]').val(dept_value).prop("selected", true);
-		})
-		
-		
-		$('#memberUpdate').click(function(){
+		$(document).ready(
+				function() {
+					console.log("document ready")
+					let type_value = $('#type_value').val();
+					let dept_value = $('#dept_value').val();
+					console.log(type_value)
+					$('select[name=m_type]').val(type_value).prop("selected",
+							true);
+					$('select[name=m_department]').val(dept_value).prop(
+							"selected", true);
+				})
+
+		$('#memberUpdate').click(function() {
 			$.ajax({
 				url : "memberUpdate.do",
 				type : "post",
-				data : {"m_id" : $('input[name=m_id]').val(),
+				data : {
+					"m_id" : $('input[name=m_id]').val(),
 					"m_pw" : $('input[name=m_pw]').val(),
 					'm_name' : $('input[name=m_name]').val(),
 					'm_phone' : $('input[name=m_phone]').val(),
 					'm_email' : $('input[name=m_email]').val(),
 					'm_department' : $('select[name=m_department]').val(),
-					'm_type' : $('select[name=m_type]').val()},
-				success : function(res){
+					'm_type' : $('select[name=m_type]').val()
+				},
+				success : function(res) {
 					alert('회원정보수정 성공')
 				},
-				error : function(e){
+				error : function(e) {
 					console.log("회원정보수정 에러")
 				}
-				
-				
+
 			})
 		})
 	</script>

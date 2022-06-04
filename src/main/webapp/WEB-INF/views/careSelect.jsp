@@ -54,7 +54,7 @@
 
 <style>
 a {
-	font-size: 17px;
+	font-size: 19px;
 }
 
 #gotop {
@@ -158,8 +158,10 @@ input {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
-						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자
+								조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자
+								모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -244,25 +246,26 @@ input {
 					<section style="font-size: 18px;">
 						<br>
 						<div
-							style="text-align: center; color: rgb(87, 87, 87); font-size: 25px; font-weight: 600;">
+							style="text-align: center; color: rgb(87, 87, 87); font-size: 32px; font-weight: 600;">
 							사용자 조회</div>
 						<hr>
 
-						<select id="selectanyone" name="selectanyone" class="form-select" aria-label="Default select example">
+						<select id="selectanyone" name="selectanyone" class="form-select"
+							aria-label="Default select example">
 							<option selected>사용자 선택</option>
 							<c:choose>
-								<c:when test = "${not empty list}">
+								<c:when test="${not empty list}">
 									<c:forEach var="vo" items="${list}" varStatus="i">
 										<option value="${vo.c_seq}">${vo.c_name}</option>
 									</c:forEach>
 								</c:when>
-							</c:choose>	
+							</c:choose>
 						</select>
 				</div>
 				<br> <br>
 
 				<form>
-					<table class="table table-striped"  style="font-size: 20px;"
+					<table class="table table-striped" style="font-size: 20px;"
 						style="background-color: rgb(248, 234, 207);">
 						<thead style="text-align: center;">
 							<tr>
@@ -275,7 +278,7 @@ input {
 						</thead>
 						<tbody id="tbody">
 							<c:choose>
-								<c:when test = "${not empty list}">
+								<c:when test="${not empty list}">
 									<c:forEach var="vo" items="${list}" varStatus="i">
 										<tr>
 											<th scope="row">${i.count}</th>
@@ -283,14 +286,19 @@ input {
 											<td>${vo.c_phone}</td>
 											<td>${vo.c_address}</td>
 											<td>${vo.c_memo}</td>
-											<td style="text-align: center;">
-		                                        <a href="careUpdatePage.do?c_seq=${vo.c_seq}"><button type="button" style="background-color:#F0AD4E !important; border-radius:10px;color: #333;">수정</button></a>
-		                                        <a href="careDelete.do?c_seq=${vo.c_seq}&c_manager_id=${vo.c_manager_id}"><button type="button" style="background-color:#F0AD4E !important; border-radius:10px;color: #333;">삭제</button></a>
-	                                        </td>
+											<td style="text-align: center;"><a
+												href="careUpdatePage.do?c_seq=${vo.c_seq}"><button
+														type="button"
+														style="background-color: #F0AD4E !important; border-radius: 10px; color: #333;">수정</button></a>
+												<a
+												href="careDelete.do?c_seq=${vo.c_seq}&c_manager_id=${vo.c_manager_id}"><button
+														type="button"
+														style="background-color: #F0AD4E !important; border-radius: 10px; color: #333;">삭제</button></a>
+											</td>
 										</tr>
 									</c:forEach>
 								</c:when>
-							</c:choose>	
+							</c:choose>
 						</tbody>
 					</table>
 
@@ -323,7 +331,7 @@ input {
 			<div class="row">
 				<div class="maine_action">
 					<br>
-					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+					<h1 class="text-white" style="text-align: center;">Keepers는
 						노인복지를 위해 노력합니다</h1>
 					<br>
 				</div>
@@ -337,7 +345,7 @@ input {
 		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
-		style="background-color: rgba(255, 166, 0, 0.327);">
+		style="background-color: rgba(255, 166, 0, 0.327); color: #2f3234;">
 		<div class="container">
 			<div class="row">
 				<div class="widget_area">
@@ -386,7 +394,8 @@ input {
 									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>무게센서를 통해 생활반응 확인</p>
+									<p style="color: black;">무게센서를 통해 생활반응 확인</p>
+
 
 								</div>
 							</div>
@@ -395,7 +404,7 @@ input {
 									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>12시간 무반응시 복지사에게 1차 알림</p>
+									<p style="color: black;">12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
@@ -404,7 +413,7 @@ input {
 									<img src="resources/imgs/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>24시간 무반응시 복지사에게 방문 알림</p>
+									<p style="color: black;">24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -416,20 +425,21 @@ input {
 							<h5 class="text-white">제휴 기관</h5>
 							<ul class="m-top-20">
 								<li class="m-top-20"><a
-									href="http://www.yangjibokji.or.kr/"><i
+									href="http://www.yangjibokji.or.kr/" style="color: black;"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://care1004.or.kr/main/main.php"><i
-										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+									href="http://care1004.or.kr/main/main.php"
+									style="color: black;"><i class="fa fa-angle-right"></i>
+										두암종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://www.gjw.or.kr/agapesilver/"><i
+									href="http://www.gjw.or.kr/agapesilver/" style="color: black;"><i
 										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
 								<li class="m-top-20"><a
-									href="http://www.noin.or.kr/index.php?"><i
+									href="http://www.noin.or.kr/index.php?" style="color: black;"><i
 										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>
@@ -445,6 +455,7 @@ input {
 				</div>
 				<!-- End off col-md-3 -->
 			</div>
+			<input type="hidden" name="m_id" value=${info.m_id}>
 		</div>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
@@ -471,40 +482,48 @@ input {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
-	
+
 	<script>
-		$(document).ready(function(){
-			$('#selectanyone').on('change', function(){
+		$(document).ready(function() {
+			$('#selectanyone').on('change', function() {
 				var c_seq = $('select[name=selectanyone]').val()
 				console.log(c_seq)
 				$.ajax({
 					url : "selectAny.do",
-					type: "post",
-					data : {"c_seq" : c_seq},
+					type : "post",
+					data : {
+						"c_seq" : c_seq
+					},
 					dataType : "json",
 					success : selectAnyone,
-					error : function(e){
+					error : function(e) {
 						console.log("선택한 사용자 조회 에러")
 					}
 				})
-				
+
 			})
 		})
-		
-		function selectAnyone(result){
+
+		function selectAnyone(result) {
 			var html = "<tr>";
 			html += "<th scope='row'>1</th>";
-			html += "<td>"+result.c_name+"</td>";
-			html += "<td>"+result.c_phone+"</td>";
-			html += "<td>"+result.c_address+"</td>";
-			html += "<td>"+result.c_memo+"</td>";
+			html += "<td>" + result.c_name + "</td>";
+			html += "<td>" + result.c_phone + "</td>";
+			html += "<td>" + result.c_address + "</td>";
+			html += "<td>" + result.c_memo + "</td>";
 			html += "<td style='text-align: center;'>"
-            html += "    <a href='careUpdatePage.do?c_seq="+result.c_seq+"'><button type='button' style='background-color:#F0AD4E !important; border-radius:10px;color: #333;'>수정</button></a>";
-            html += "    <a href='careDelete.do?c_seq="+result.c_seq+"&c_manager_id="+result.c_manager_id+"'><button type='button' style='background-color:#F0AD4E !important; border-radius:10px;color: #333;'>삭제</button></a>";
-            html +="</td>";
-		html += "</tr>";
-		
-		$('#tbody').html(html);
+			html += "    <a href='careUpdatePage.do?c_seq="
+					+ result.c_seq
+					+ "'><button type='button' style='background-color:#F0AD4E !important; border-radius:10px;color: #333;'>수정</button></a>";
+			html += "    <a href='careDelete.do?c_seq="
+					+ result.c_seq
+					+ "&c_manager_id="
+					+ result.c_manager_id
+					+ "'><button type='button' style='background-color:#F0AD4E !important; border-radius:10px;color: #333;'>삭제</button></a>";
+			html += "</td>";
+			html += "</tr>";
+
+			$('#tbody').html(html);
 		}
 	</script>
 </body>

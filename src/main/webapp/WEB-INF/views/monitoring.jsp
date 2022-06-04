@@ -15,9 +15,12 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="resources/imgs/logow.png">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
 
 <!--Google Font link-->
@@ -58,7 +61,7 @@
 
 <style>
 a {
-	font-size: 17px;
+	font-size: 19px;
 }
 
 #gotop {
@@ -162,8 +165,10 @@ input {
 					<ul class="nav navbar-nav navbar-right">
 
 						<li><a href="careJoin.do">사용자 등록</a></li>
-						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자 조회</a></li>
-						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자 모니터링</a></li>
+						<li><a href="careSelect.do?c_manager_id=${info.m_id}">사용자
+								조회</a></li>
+						<li><a href="monitoring.do?c_manager_id=${info.m_id}">사용자
+								모니터링</a></li>
 						<li><a href="boardList.do">공지사항 게시판</a></li>
 					</ul>
 				</div>
@@ -179,7 +184,7 @@ input {
 		<!--Home Sections-->
 		<section id="home" class="home bg-black fix" style="height: 600px;">
 			<div class="overlay">
-				<img src="resources/imgs/mainimg4.jpg" alt="" width="1920px"
+				<img src="resources/imgs/mainimg1.jpg" alt="" width="1920px"
 					height="600px" style="opacity: 0.7;">
 			</div>
 			<div class="container"></div>
@@ -246,24 +251,27 @@ input {
 				<div class="main_test fix">
 
 					<!-- 모니터링 페이지 -->
-					<h2 style="text-align: center; height: 35px; font-weight: bold;">
-						모니터링</h2>
+
+					<div
+						style="text-align: center; color: rgb(87, 87, 87); font-size: 32px; font-weight: 600;">모니터링
+					</div>
 					<hr>
 					<div style="float: right;">
-						<select class="form-select" name="monitorSeq" aria-label="Default select example">
+						<select name="monitorSeq" aria-label="Default select example"
+							style="height: 50px; width: 160px;">
 							<c:choose>
-								<c:when test = "${not empty list}">
-								<option selected>사용자 선택</option>
+								<c:when test="${not empty list}">
+									<option selected>사용자 선택</option>
 									<c:forEach var="vo" items="${list}" varStatus="i">
 										<option value="${vo.c_seq}">${vo.c_name}</option>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
-								<option selected>사용자 선택</option>
+									<option selected>사용자 선택</option>
 								</c:otherwise>
-							</c:choose>	
+							</c:choose>
 						</select>
-					
+
 						<button type="button" class="btn btn-warning"
 							style="margin-left: 10px;" id="monitorSelect">조회</button>
 					</div>
@@ -271,15 +279,17 @@ input {
 
 					<!--이 부분에 차트 넣으면 됩니다 일단 이미지로 시각화만 했어요!
                                 사이즈는 1920*600 정도가 적당해보입니다 -->
-					<div class="panel" id="chart_p" style="text-align:center; padding:20px; height: 600px;">
-		                <canvas id="myChart" ></canvas>
-		            </div>
+					<div class="panel" id="chart_p"
+						style="text-align: center; padding: 20px; height: 400px;">
+						<canvas id="myChart"></canvas>
+					</div>
 					<br> <br>
 					<!-- 마지막 활동 시간 넣고 싶으면 이 곳 이용하세요 -->
 					<div style="text-align: center;">
 						<h1>
 							마지막 활동 시간은 <strong
-								style="background-color: rgb(159, 254, 159); border-radius: 8px;" id="lastAct"> </strong>입니다
+								style="background-color: rgb(159, 254, 159); border-radius: 8px;"
+								id="lastAct"> </strong>입니다
 						</h1>
 					</div>
 
@@ -304,8 +314,7 @@ input {
 								<legend style="text-align: center; height: 35px;"> 생활반응
 									확인 </legend>
 								<br>
-								<section id="presentAct">
-								</section>
+								<section id="presentAct"></section>
 							</div>
 						</div>
 					</div>
@@ -327,8 +336,8 @@ input {
 											<th scope="col">메모</th>
 										</tr>
 									</thead>
-									<tbody id = "monitoringInfo">
-										
+									<tbody id="monitoringInfo">
+
 									</tbody>
 								</table>
 							</section>
@@ -363,7 +372,7 @@ input {
 			<div class="row">
 				<div class="maine_action">
 					<br>
-					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+					<h1 class="text-white" style="text-align: center;">Keepers는
 						노인복지를 위해 노력합니다</h1>
 					<br>
 				</div>
@@ -377,7 +386,7 @@ input {
 		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
-		style="background-color: rgba(255, 166, 0, 0.327);">
+		style="background-color: rgba(255, 166, 0, 0.327); color: #2f3234;">
 		<div class="container">
 			<div class="row">
 				<div class="widget_area">
@@ -426,7 +435,8 @@ input {
 									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>무게센서를 통해 생활반응 확인</p>
+									<p style="color: black;">무게센서를 통해 생활반응 확인</p>
+
 
 								</div>
 							</div>
@@ -435,7 +445,7 @@ input {
 									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>12시간 무반응시 복지사에게 1차 알림</p>
+									<p style="color: black;">12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
@@ -444,7 +454,7 @@ input {
 									<img src="resources/imgs/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>24시간 무반응시 복지사에게 방문 알림</p>
+									<p style="color: black;">24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -456,20 +466,21 @@ input {
 							<h5 class="text-white">제휴 기관</h5>
 							<ul class="m-top-20">
 								<li class="m-top-20"><a
-									href="http://www.yangjibokji.or.kr/"><i
+									href="http://www.yangjibokji.or.kr/" style="color: black;"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://care1004.or.kr/main/main.php"><i
-										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+									href="http://care1004.or.kr/main/main.php"
+									style="color: black;"><i class="fa fa-angle-right"></i>
+										두암종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://www.gjw.or.kr/agapesilver/"><i
+									href="http://www.gjw.or.kr/agapesilver/" style="color: black;"><i
 										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
 								<li class="m-top-20"><a
-									href="http://www.noin.or.kr/index.php?"><i
+									href="http://www.noin.or.kr/index.php?" style="color: black;"><i
 										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>
@@ -485,12 +496,14 @@ input {
 				</div>
 				<!-- End off col-md-3 -->
 			</div>
+			<input type="hidden" name="m_id" value=${info.m_id}>
 		</div>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>
+
 
 	<!-- JS includes -->
 
@@ -511,7 +524,7 @@ input {
 
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
-	
+
 	<script type="text/javascript">
 		$('#monitorSelect').click(function(){
 			var d_c_seq = $('select[name=monitorSeq]').val()

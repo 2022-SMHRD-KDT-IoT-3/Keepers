@@ -54,7 +54,7 @@
 
 <style>
 a {
-	font-size: 17px;
+	font-size: 19px;
 }
 
 #gotop {
@@ -231,8 +231,9 @@ a {
 
 
 					<!-- 개인정보 보여줌, 개인정보수정페이지 연결 -->
-					<div class="col-md-6">
-						<div class="test_item fix" style="text-align: center;">
+					<div class="col-md-6" style="margin-right: 12px;">
+						<div class="test_item fix"
+							style="text-align: center; background-color: white;">
 
 							<div class="item_text" style="font-size: 22px;">
 								<legend style="text-align: center; height: 35px;"> 내 정보
@@ -241,8 +242,7 @@ a {
 								<div>${info.m_name}님</div>
 								<div>ID : ${info.m_id}</div>
 								<div>DEPT : ${info.m_department}</div>
-								<br>
-								<a href="logout.do"><button type="button"
+								<br> <a href="logout.do"><button type="button"
 										class="btn btn-warning">로그아웃</button></a> <br> <br> <a
 									href="memberUpdatePage.do"><h5
 										style="color: rgb(14, 99, 14);">개인정보 수정을 원하시면 클릭하세요</h5></a>
@@ -254,25 +254,27 @@ a {
 
 
 					<a href="./board.html">
-						<div class="col-md-6">
-							<div class="test_item fix" style="text-align: center;"><a href="boardList.do">
+						<div class="test_item fix"
+							style="text-align: center; background-color: white; height: 408px;">
+							<a href="boardList.do">
 								<div class="item_text">
 									<legend style="text-align: center; height: 35px;">공지사항
 										게시판 </legend>
-
 									<section
-										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray" id="boardLimit">
-
-									</section>
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray"
+										id="boardLimit"></section>
+									<br>
 								</div>
-							</div></a>
-
+							</a>
 						</div>
 					</a>
 
-
 				</div>
+				</a>
+
+
 			</div>
+		</div>
 		</div>
 	</section>
 
@@ -287,35 +289,36 @@ a {
 					<!-- 사용자 조회 -->
 					<a href="careSelect.do?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
-							<div class="test_item fix" style="text-align: center;">
+							<div class="test_item fix"
+								style="text-align: center; background-color: white; height: 408px;">
 
 								<div class="item_text">
 									<legend style="text-align: center; height: 35px;"> 사용자
 										조회 </legend>
-									<br>
-									<section
-										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray" id="careLimit">
 
-									</section>
-									
+									<section
+										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray"
+										id="careLimit"></section>
+
 								</div>
-								
+
 							</div>
-							
+
 						</div>
 					</a>
 
 					<!-- 사용자 모니터링 -->
 					<a href="monitoring.do?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
-							<div class="test_item fix" style="text-align: center;">
+							<div class="test_item fix"
+								style="text-align: center; background-color: white; height: 408px;">
 								<div class="item_text">
 									<legend style="text-align: center; height: 35px;">사용자
 										모니터링 </legend>
 
-									<section
-										style="background-color: rgba(249, 249, 249, 0.863) !important; color: gray">
-
+									<section>
+										<br> <img src="resources/imgs/monitor.png" alt=""
+											style="height: 230px;">
 									</section>
 								</div>
 							</div>
@@ -341,7 +344,7 @@ a {
 			<div class="row">
 				<div class="maine_action">
 					<br>
-					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+					<h1 class="text-white" style="text-align: center;">Keepers는
 						노인복지를 위해 노력합니다</h1>
 					<br>
 				</div>
@@ -355,7 +358,7 @@ a {
 		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
-		style="background-color: rgba(255, 166, 0, 0.327);">
+		style="background-color: rgba(255, 166, 0, 0.327); color: #2f3234;">
 		<div class="container">
 			<div class="row">
 				<div class="widget_area">
@@ -404,7 +407,8 @@ a {
 									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>무게센서를 통해 생활반응 확인</p>
+									<p style="color: black;">무게센서를 통해 생활반응 확인</p>
+
 
 								</div>
 							</div>
@@ -413,7 +417,7 @@ a {
 									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>12시간 무반응시 복지사에게 1차 알림</p>
+									<p style="color: black;">12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
@@ -422,7 +426,7 @@ a {
 									<img src="resources/imgs/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>24시간 무반응시 복지사에게 방문 알림</p>
+									<p style="color: black;">24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -434,20 +438,21 @@ a {
 							<h5 class="text-white">제휴 기관</h5>
 							<ul class="m-top-20">
 								<li class="m-top-20"><a
-									href="http://www.yangjibokji.or.kr/"><i
+									href="http://www.yangjibokji.or.kr/" style="color: black;"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://care1004.or.kr/main/main.php"><i
-										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+									href="http://care1004.or.kr/main/main.php"
+									style="color: black;"><i class="fa fa-angle-right"></i>
+										두암종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://www.gjw.or.kr/agapesilver/"><i
+									href="http://www.gjw.or.kr/agapesilver/" style="color: black;"><i
 										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
 								<li class="m-top-20"><a
-									href="http://www.noin.or.kr/index.php?"><i
+									href="http://www.noin.or.kr/index.php?" style="color: black;"><i
 										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>

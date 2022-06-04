@@ -53,7 +53,7 @@
 
 <style>
 a {
-	font-size: 17px;
+	font-size: 19px;
 }
 
 #gotop {
@@ -274,8 +274,8 @@ input {
 							</tr>
 							<tr>
 								<td colspan="4">
-								<hr>
-								<div>${vo.b_content}</div>
+									<hr>
+									<div>${vo.b_content}</div>
 								</td>
 							</tr>
 						</tbody>
@@ -310,7 +310,7 @@ input {
 			<div class="row">
 				<div class="maine_action">
 					<br>
-					<h1 class="text-white text-uppercase" style="text-align: center;">Keepers는
+					<h1 class="text-white" style="text-align: center;">Keepers는
 						노인복지를 위해 노력합니다</h1>
 					<br>
 				</div>
@@ -324,7 +324,7 @@ input {
 		<br> <br> <br> <br> <br>
 	</div>
 	<footer id="contact"
-		style="background-color: rgba(255, 166, 0, 0.327);">
+		style="background-color: rgba(255, 166, 0, 0.327); color: #2f3234;">
 		<div class="container">
 			<div class="row">
 				<div class="widget_area">
@@ -373,7 +373,8 @@ input {
 									<img src="resources/imgs/product1.png" alt="" width="50px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>무게센서를 통해 생활반응 확인</p>
+									<p style="color: black;">무게센서를 통해 생활반응 확인</p>
+
 
 								</div>
 							</div>
@@ -382,7 +383,7 @@ input {
 									<img src="resources/imgs/product2.png" alt="" width="37px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>12시간 무반응시 복지사에게 1차 알림</p>
+									<p style="color: black;">12시간 무반응시 복지사에게 1차 알림</p>
 
 								</div>
 							</div>
@@ -391,7 +392,7 @@ input {
 									<img src="resources/imgs/product3.png" alt="" width="42px" />
 								</div>
 								<div class="widget_latst_item_text">
-									<p>24시간 무반응시 복지사에게 방문 알림</p>
+									<p style="color: black;">24시간 무반응시 복지사에게 방문 알림</p>
 								</div>
 							</div>
 						</div>
@@ -403,20 +404,21 @@ input {
 							<h5 class="text-white">제휴 기관</h5>
 							<ul class="m-top-20">
 								<li class="m-top-20"><a
-									href="http://www.yangjibokji.or.kr/"><i
+									href="http://www.yangjibokji.or.kr/" style="color: black;"><i
 										class="fa fa-angle-right"></i> 양지종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://care1004.or.kr/main/main.php"><i
-										class="fa fa-angle-right"></i> 두암종합사회복지관 </a></li>
+									href="http://care1004.or.kr/main/main.php"
+									style="color: black;"><i class="fa fa-angle-right"></i>
+										두암종합사회복지관 </a></li>
 								<li class="m-top-20"><a
-									href="http://www.gjw.or.kr/agapesilver/"><i
+									href="http://www.gjw.or.kr/agapesilver/" style="color: black;"><i
 										class="fa fa-angle-right"></i>우리동네간호주간보호센터</a></li>
 								<li class="m-top-20"><a
-									href="http://www.noin.or.kr/index.php?"><i
+									href="http://www.noin.or.kr/index.php?" style="color: black;"><i
 										class="fa fa-angle-right"></i>씨씨씨아가페실버센터</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>동구노인종합복지관</a></li>
-								<li class="m-top-20"><a href=""><i
+								<li class="m-top-20"><a href="" style="color: black;"><i
 										class="fa fa-angle-right"></i>딸과아들재활노인주간보호센터</a></li>
 							</ul>
 						</div>
@@ -432,12 +434,14 @@ input {
 				</div>
 				<!-- End off col-md-3 -->
 			</div>
+			<input type="hidden" name="m_id" value=${info.m_id}>
 		</div>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
 	</footer>
 	<!-- 회사 소개 구간 끝 -->
 	</div>
+
 
 	<!-- JS includes -->
 
