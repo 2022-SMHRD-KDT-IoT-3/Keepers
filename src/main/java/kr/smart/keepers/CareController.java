@@ -31,11 +31,7 @@ public class CareController {
 	//사용자등록 요청 메소드
 	@RequestMapping("/careInsert.do")
 	public String careInsert(CareVO vo) {
-		System.out.println("사용자등록");
-		System.out.println(vo.toString());
-		if(vo.getC_memo().equals("")) {
-			vo.setC_memo("-");
-		}
+		System.out.println("사용자등록 : "+vo.toString());
 		int care_id = mapper.careInsert(vo);
 		
 		System.out.println(care_id);
@@ -88,7 +84,8 @@ public class CareController {
 	@RequestMapping("/careUpdate.do")
 	public String careUpdate(CareVO vo) {
 		
-		System.out.println(vo.toString());
+		System.out.println("업데이트 : " + vo.toString());
+		
 		mapper.careUpdate(vo);
 		String c_manager_id = vo.getC_manager_id();
 		
