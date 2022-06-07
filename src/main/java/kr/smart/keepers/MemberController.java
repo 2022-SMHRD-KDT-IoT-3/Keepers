@@ -53,7 +53,7 @@ public class MemberController {
 	// 로그인 요청 메소드
 	@RequestMapping("/loginSelect.do")
 	public @ResponseBody String loginSelect(MemberVO vo, HttpSession session) {
-		System.out.println("로그인 요청");
+		System.out.println("로그인 요청1");
 		System.out.println(vo.toString());
 		MemberVO info = mapper.loginSelect(vo);
 
