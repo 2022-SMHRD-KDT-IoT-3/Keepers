@@ -588,7 +588,7 @@ input {
 	              labels: labels1,
 	              
 	              datasets: [{
-	                  label: '활동시간',
+	                  label: '활동여부',
 	                  //100= 마지막에 넣어주기 최대범위설정 
 	                  data: testValue,
 	                  backgroundColor: [

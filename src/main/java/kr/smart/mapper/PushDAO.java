@@ -21,7 +21,7 @@ public class PushDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
-	int c_seq = 16;
+	int c_seq = 56;
 	
 		
 		//푸쉬알림 사용자정보 

@@ -460,6 +460,8 @@ input {
 				<!-- End off col-md-3 -->
 			</div>
 			<input type="hidden" name="m_id" value=${info.m_id}>
+			<input type="hidden" id="dept_value" value=${info.m_department}>
+			<input type="hidden" id="type_value" value=${info.m_type}>
 		</div>
 		</div>
 		<br> <br> <br> <br> <br> <br> <br>
