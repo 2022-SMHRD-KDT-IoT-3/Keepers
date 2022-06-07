@@ -11,4 +11,7 @@ public interface MainMapper {
 
 	public ArrayList<CareVO> careLimit(String c_manager_id);
 
+	public ArrayList<ValueVO> test();
+
+
 }

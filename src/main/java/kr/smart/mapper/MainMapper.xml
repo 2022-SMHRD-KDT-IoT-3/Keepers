@@ -16,5 +16,14 @@
         from k_care
         where c_manager_id = #{m_id} limit 4;
     </select>
+    
+        <!-- 시연 페이지 -->
+    <select id="test" resultType="kr.smart.mapper.ValueVO">
+        select v.v_weight, v.v_signdate
+		from k_value v, k_device d
+		where d.d_c_seq = 1
+		and d.d_seq = v.d_seq
+		order by v.v_signdate desc;
+    </select>
         
 </mapper>
