@@ -22,7 +22,16 @@
 <body>
 
 	<div class="container">
+		<br> <br> <br>
 		<h2 class="text-center">Keepers 시연 페이지</h2>
+		<hr>
+		<br>
+		<div style="text-align: center;">
+			<button type="button" class="btn btn-success btn-lg"
+				style="margin-right: 10px;">새로 고침</button>
+			<button type="button" id="push" class="btn btn-success btn-lg">Push 알림</button>
+		</div>
+		<br> <br>
 		<div class="panel panel-default">
 
 			<div class="panel-body">
@@ -31,7 +40,7 @@
 						<td>번호</td>
 						<td>무게센서 데이터</td>
 						<td>센서 입력시간</td>
-						
+
 					</tr>
 
 
@@ -43,19 +52,31 @@
 						</tr>
 					</c:forEach>
 				</table>
-				<a href=""><button type="button"
-						class="btn btn-success btn-sm">새로 고침</button></a>
+
 			</div>
 			<div class="panel-body">Keepers 감사합니다.</div>
 		</div>
-		
+
 	</div>
 
-<script type="text/javascript">
-$('.button').click(function() {
-location.reload();
-});
-</script>
+	<script type="text/javascript">
+		$('.button').click(function() {
+			location.reload();
+		});
+		
+		$('#push').click(function(){
+			$.ajax({
+				url : "fcm.do",
+				type : "post",
+				success : function(res){
+					console.log("알림보내기 성공")
+				},
+				error : function(e){
+					console.log("알림보내기 실패")
+				}
+			})
+		})
+	</script>
 
 </body>
 </html>
