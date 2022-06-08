@@ -22,12 +22,15 @@ public class ValueController {
 		System.out.println("==[센서값 입력 시작]==");
 
 		String d_seq = request.getParameter("d_seq");
-		String v_weight = request.getParameter("v_weight");
+		float v_weight = 0;
+		if(request.getParameter("v_weight") != null) {
+			v_weight = Float.parseFloat(request.getParameter("v_weight"));
+		}
 		String v_bat = request.getParameter("v_bat");
 
 		ValueVO vo = new ValueVO("default", d_seq, v_weight, "default", v_bat);
 		System.out.println(vo.toString());
-		// mapper.insertValue(vo);
+		//mapper.insertValue(vo);
 
 		System.out.println("==[센서값 입력 종료]==");
 
