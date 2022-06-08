@@ -52,15 +52,14 @@ public class MonitoringController {
 		System.out.println(list.size());
 		
 		String chartValue = "" + list.get(0).getV_weight() ;
-		for(int i = 1; i<list.size(); i++) {
-			chartValue += "," + list.get(i).getV_weight();
-		}
-		System.out.println(chartValue);
-		
 		String chartLabel = "" + list.get(0).getV_signdate() ;
 		for(int i = 1; i<list.size(); i++) {
-			chartLabel += "," + list.get(i).getV_signdate();
+			if(list.get(i).getV_weight() >= 0) {
+				chartValue += "," + list.get(i).getV_weight();
+				chartLabel += "," + list.get(i).getV_signdate();
+			}
 		}
+		System.out.println(chartValue);
 		System.out.println(chartLabel);
 		
 		array[0] = chartValue;
