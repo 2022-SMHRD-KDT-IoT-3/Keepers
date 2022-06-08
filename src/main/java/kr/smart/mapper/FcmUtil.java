@@ -35,8 +35,8 @@ public class FcmUtil {
 				FirebaseApp.initializeApp(options);
 			}
 			//안드로이드 토큰
-			String registrationToken = "f3fFFBm8TiyEVvHtWe-Nks:APA91bHFLLpIDKJfOfVUyS_7MToELXGbXqSWmNKeKA7aqUisN87Tbz-TfEJEqYgzoMNjOW1WQ7LVHh7nOYH6BIN54zOA5VnfG0ToComn0HtEyGbXXayXY94MfeC3DQaqPx6LqUitzhLI";
-		
+			String registrationToken = "c0A4VUtVT_KNc-1OL0ook4:APA91bEWsHIzeYdB4h7DNHJV7D4E3c0j5Bq7qL0fDwlkgRZ2whgkUp27t78kNhVs9sWumREdNbFTz5pVvCBvskyKW_MTz6gq0lu3VPzQ7bLKcl6UvAk0wJ_ZTCraI_hlgeveFO4CjOzA";
+			// f3fFFBm8TiyEVvHtWe-Nks:APA91bHFLLpIDKJfOfVUyS_7MToELXGbXqSWmNKeKA7aqUisN87Tbz-TfEJEqYgzoMNjOW1WQ7LVHh7nOYH6BIN54zOA5VnfG0ToComn0HtEyGbXXayXY94MfeC3DQaqPx6LqUitzhLI
 			//message 작성
 			Message msg = Message.builder()
 					.setAndroidConfig(AndroidConfig.builder()
