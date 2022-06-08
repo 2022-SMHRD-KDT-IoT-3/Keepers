@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Keepers 시연 페이지</title>
 <META HTTP-EQUIV="refresh" CONTENT="5">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

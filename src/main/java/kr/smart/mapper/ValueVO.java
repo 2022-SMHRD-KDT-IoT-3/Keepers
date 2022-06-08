@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class ValueVO {
 	private String v_seq ;
 	private String d_seq ;
-	private String v_weight ;
+	private float v_weight ;
 	private String v_signdate ;
 	String v_bat;
 	
@@ -20,7 +20,7 @@ public class ValueVO {
 	private String d_signdate; //제품 등록일자
 	
 	//센서값생성자
-	public ValueVO(String v_seq, String d_seq, String v_weight, String v_signdate, String v_bat) {
+	public ValueVO(String v_seq, String d_seq, float v_weight, String v_signdate, String v_bat) {
 		super();
 		this.v_seq = v_seq;
 		this.d_seq = d_seq;
