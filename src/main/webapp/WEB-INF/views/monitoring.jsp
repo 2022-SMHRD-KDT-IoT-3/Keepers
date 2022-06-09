@@ -529,6 +529,7 @@ input {
 		$('#monitorSelect').click(function(){
 			var d_c_seq = $('select[name=monitorSeq]').val()
 			console.log(d_c_seq)
+			$('#chart_p').html("<canvas id='myChart'></canvas>")
 			$.ajax({
 				url : "monitoringChart.do",
 				type : "get",
@@ -561,6 +562,7 @@ input {
 				data : {"d_c_seq" : d_c_seq},
 				dataType : "json",
 				success : function(res){
+					console.log(res)
 					var html = "<tr>";
 					html += "<th scope='row'>"+res.c_name+"</th>"
 					html += "<td>"+res.c_phone+"</td>"
@@ -578,19 +580,92 @@ input {
 		
 		function monitorResult(result){
 			
-			var testValue = result[0].split(',');
-			var testLabel = result[1].split(',');
-			console.log(testValue);
-			console.log(testLabel);
+			if(result != "0"){
 			
-	          const labels1 = testLabel;
+				var testValue = result[0].split(',');
+				var testLabel = result[1].split(',');
+				console.log(testValue);
+				console.log(testLabel);
+				
+		          const labels1 = testLabel;
+		          const data1 = {
+		              labels: labels1,
+		              
+		              datasets: [{
+		                  label: '활동여부',
+		                  //100= 마지막에 넣어주기 최대범위설정 
+		                  data: testValue,
+		                  backgroundColor: [
+		                       //라인선 색(0.2 = 투명도 )
+		                       'rgb( 255,165,0, 0.5)',
+		                  ],
+		                  borderColor: [
+		                       // border 색 
+		                       'rgb( 255,165,0)',
+		                  ],
+		                  //선두께
+		                  borderWidth: 4,
+		                  
+		                  //둥근선 
+		                  tension: 0.3,
+		                  
+		                  pointBorderWidth: 0,
+		                  pointStyle: 'star'
+		                  
+		              }]
+		          };
+				
+		          const config1 = {
+		                  type: 'line',
+		                  data: data1,
+		                  options: {
+		                  	 layout : {
+		                           padding : {
+		                        	   top :20,
+		                               bottom :20
+		                           },
+		                       },
+		                      scales: {
+		                          y: {
+		                              //0부터 시작하기
+		                              beginAtZero: true
+		                          },
+		                          X: {
+		                          showGrid: true,
+		                          display:true,
+		                          type: 'time',
+		                          time: {
+		                            parser: 'HH:mm:ss',
+		                            unit: 'hour',
+		                            displayFormats: {
+		                              hour: 'HH:mm'
+		                            },
+		                            tooltipFormat: 'D MMM YYYY - HH:mm:ss'
+		                          }
+		                          
+		                      	},
+		                      },
+		                      //비율유지 하지마라 
+		                      maintainAspectRatio:false
+		                  }
+		                  
+		              };
+		            
+		              const multichart_d = new Chart(
+		                  document.getElementById('myChart'),
+		                  config1
+		              );
+				
+			}else{
+			
+	          const labels1 = ['0.0,0.0,0.0,0.0,0.0,0.0,0.0'];
 	          const data1 = {
 	              labels: labels1,
 	              
 	              datasets: [{
 	                  label: '활동여부',
 	                  //100= 마지막에 넣어주기 최대범위설정 
-	                  data: testValue,
+	                  data: ['00:02,01:02,02:02,03:02,04:02,05:02,05:24'],
 	                  backgroundColor: [
 	                       //라인선 색(0.2 = 투명도 )
 	                       'rgb( 255,165,0, 0.5)',
@@ -651,38 +726,42 @@ input {
 	                  document.getElementById('myChart'),
 	                  config1
 	              );
-			
+		}
 		};
 		
 		
 		function monitorAct(result){
-			console.log(result)
-			var lastAct = "";
-			$.each(result, (index, obj) => {
-				if(obj.v_weight > 10){
-					lastAct = obj.v_signdate;
-					return false;
+			console.log(result[0])
+			if(result[0] != null){
+				var lastAct = "";
+				$.each(result, (index, obj) => {
+					if(obj.v_weight > 10){
+						lastAct = obj.v_signdate;
+						return false;
+					}
+				});
+				$('#lastAct').text(lastAct);
+				
+				var html = "";
+				if(result[0].v_weight >10){
+					html += "<img src='resources/imgs/on.png' width='180px'> <br>"
+					html += "<br>"
+					html += "<h2"
+					html +="	style='background-color: rgb(159, 254, 159); display: inline; border-radius: 5px;'>"
+					html +="	<strong >활동중</strong>"
+					html +="</h2>"
+				}else{
+	                html += "<img src='./imgs/off.png' width='200px'>"
+	                html += "<br>"
+	                html += "<br>"
+	                html += "<h2 style='background-color: rgb(228, 234, 163); display: inline; border-radius: 5px;'><strong>무반응</strong></h2>"
 				}
-			});
-			$('#lastAct').text(lastAct);
-			
-			var html = "";
-			if(result[0].v_weight >10){
-				html += "<img src='resources/imgs/on.png' width='180px'> <br>"
-				html += "<br>"
-				html += "<h2"
-				html +="	style='background-color: rgb(159, 254, 159); display: inline; border-radius: 5px;'>"
-				html +="	<strong >활동중</strong>"
-				html +="</h2>"
+				$('#presentAct').html(html);
+				
 			}else{
-                html += "<img src='./imgs/off.png' width='200px'>"
-                html += "<br>"
-                html += "<br>"
-                html += "<h2 style='background-color: rgb(228, 234, 163); display: inline; border-radius: 5px;'><strong>무반응</strong></h2>"
+				$('#lastAct').text("정보없음");
+				$('#presentAct').text("정보없음");
 			}
-			$('#presentAct').html(html);
-			
-			
 		};
 	</script>
 
