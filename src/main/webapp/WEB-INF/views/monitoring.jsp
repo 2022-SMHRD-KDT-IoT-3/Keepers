@@ -253,10 +253,9 @@ input {
 
 
 					<!-- 달력 공간-->
-					<a href="careSelect.do?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
 							<div class="test_item fix"
-								style="text-align: center; background-color: white; height: 408px; padding: 5px;">
+								style="text-align: center; background-color: white;">
 								<br>
 								<div class="item_text">
 									<legend style="text-align: center; height: 35px;"> 한달
@@ -271,26 +270,22 @@ input {
 							</div>
 
 						</div>
-					</a>
 
 					<!-- 주간 차트 -->
-					<a href="monitoring.do?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
-							<div class="test_item fix"
-								style="text-align: center; background-color: white; height: 408px;">
-								<div class="item_text">
-									<legend style="text-align: center; height: 35px;">주간
+							<div class="test_item fix" 
+								style="background-color: white;">
+									<legend style="height: 35px;">주간
 										모니터링 </legend>
-
+								<div class="item_text" id="chart_w" style="width:500px; height:500px; padding-right:5px;">
 									<section>
 										<br>
-
+										<canvas id="weekChart"></canvas>
 									</section>
 								</div>
 							</div>
 
 						</div>
-					</a>
 				</div>
 			</div>
 		</div>
@@ -587,6 +582,7 @@ input {
 			var d_c_seq = $('select[name=monitorSeq]').val()
 			console.log(d_c_seq)
 			$('#chart_p').html("<canvas id='myChart'></canvas>")
+			$('#chart_w').html("<canvas id='weekChart'></canvas>")
 			$.ajax({
 				url : "monitoringChart.do",
 				type : "get",
@@ -649,7 +645,7 @@ input {
 		              labels: labels1,
 		              
 		              datasets: [{
-		                  label: '활동여부',
+		                  label: '일간활동여부',
 		                  //100= 마지막에 넣어주기 최대범위설정 
 		                  data: testValue,
 		                  backgroundColor: [
@@ -712,6 +708,78 @@ input {
 		                  document.getElementById('myChart'),
 		                  config1
 		              );
+		              
+		              var weekLabel = "06월 06일,06월 07일,06월08일,06월09일,06월10일,06월11일,06월12일".split(',');
+		              var weekData = "47,52,45,33,25,15,10".split(',');
+	      				console.log(weekLabel)
+		      		const data2 = {
+		      				
+		      				labels: weekLabel,
+		      	              
+		      	              datasets: [{
+		      	                  label: '주간활동여부',
+		      	                  //100= 마지막에 넣어주기 최대범위설정 
+		      	                  data: weekData,
+		      	                  backgroundColor: [
+		      	                       //라인선 색(0.2 = 투명도 )
+		      	                       'rgb( 255,165,0, 0.5)',
+		      	                  ],
+		      	                  borderColor: [
+		      	                       // border 색 
+		      	                       'rgb( 255,165,0)',
+		      	                  ],
+		      	                  //선두께
+		      	                  borderWidth: 4,
+		      	                  
+		      	                  //둥근선 
+		      	                  tension: 0.3,
+		      	                  
+		      	                  pointBorderWidth: 0,
+		      	                  pointStyle: 'star'
+		      	                  
+		      	              }]
+		      	          };
+		      			
+		      	          const config2 = {
+		      	                  type: 'line',
+		      	                  data: data2,
+		      	                  options: {
+		      	                  	 layout : {
+		      	                           padding : {
+		      	                        	   top :20,
+		      	                               bottom :20
+		      	                           },
+		      	                       },
+		      	                      scales: {
+		      	                          y: {
+		      	                              //0부터 시작하기
+		      	                              beginAtZero: true
+		      	                          },
+		      	                          X: {
+		    		                          showGrid: true,
+		    		                          display:true
+		    		                          /* type: 'time',
+		    		                          time: {
+		    		                            parser: 'DD/MM/YYYY',
+		    		                            unit: 'day',
+		    		                            displayFormats: {
+		    		                              hour: 'DD/MM/YYYY'
+		    		                            },
+		    		                            tooltipFormat: 'DD/MM/YYYY'
+		    		                          } */
+		    		                          
+		    		                      	},
+		      	                      },
+		      	                      //비율유지 하지마라 
+		      	                      maintainAspectRatio:false
+		      	                  }
+		      	                  
+		      	              };
+		      	            
+		      	              const weekchart_d = new Chart(
+		      	                  document.getElementById('weekChart'),
+		      	                  config2
+		      	              );
 				
 			}else{
 			
@@ -719,7 +787,7 @@ input {
 	              labels: [0,1,2,3,4,5,6,7],
 	              
 	              datasets: [{
-	                  label: '활동여부',
+	                  label: '일간활동여부',
 	                  //100= 마지막에 넣어주기 최대범위설정 
 	                  data: [0.0,0.0,0.0,0.0,0.0,0.0,0.0],
 	                  backgroundColor: [
@@ -819,6 +887,8 @@ input {
 				$('#presentAct').text("정보없음");
 			}
 		};
+		
+		
 	</script>
 
 </body>
