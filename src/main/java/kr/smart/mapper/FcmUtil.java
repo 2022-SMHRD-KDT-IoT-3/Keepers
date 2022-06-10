@@ -35,7 +35,7 @@ public class FcmUtil {
 				FirebaseApp.initializeApp(options);
 			}
 			//안드로이드 토큰
-			String registrationToken = "c0A4VUtVT_KNc-1OL0ook4:APA91bEWsHIzeYdB4h7DNHJV7D4E3c0j5Bq7qL0fDwlkgRZ2whgkUp27t78kNhVs9sWumREdNbFTz5pVvCBvskyKW_MTz6gq0lu3VPzQ7bLKcl6UvAk0wJ_ZTCraI_hlgeveFO4CjOzA";
+			String registrationToken = "faWfui3hTSSSrxLqhVpRzU:APA91bEB5JfqX5KL0biFRjTcn2DQ15jjoChQE-NrdB_ZlZZk0GG67ROzaxcjIp8MFZlx4Q3nHL4EljqUQNY2XFNiuWzmIXHG0SeRlLSY011fbfhlN5eGZdyn_yhc0n0WzjiEsmJ9d5-J";
 			// f3fFFBm8TiyEVvHtWe-Nks:APA91bHFLLpIDKJfOfVUyS_7MToELXGbXqSWmNKeKA7aqUisN87Tbz-TfEJEqYgzoMNjOW1WQ7LVHh7nOYH6BIN54zOA5VnfG0ToComn0HtEyGbXXayXY94MfeC3DQaqPx6LqUitzhLI
 			//message 작성
 			Message msg = Message.builder()
@@ -45,6 +45,7 @@ public class FcmUtil {
 							.setNotification(AndroidNotification.builder()
 									.setTitle("Keepers")
 									.setBody(c_name+"님의 무반응상태가 12시간이 경과되었습니다.\n연락이나 방문 등 긴급한 확인이 요구됩니다.")
+									.setColor("#ff9614")
 									.build())
 							.build())
 					.setToken(registrationToken)

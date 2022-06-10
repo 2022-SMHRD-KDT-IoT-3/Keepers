@@ -30,7 +30,7 @@ public class ValueController {
 
 		ValueVO vo = new ValueVO("default", d_seq, v_weight, "default", v_bat);
 		System.out.println(vo.toString());
-		//mapper.insertValue(vo);
+		mapper.insertValue(vo);
 
 		System.out.println("==[센서값 입력 종료]==");
 
