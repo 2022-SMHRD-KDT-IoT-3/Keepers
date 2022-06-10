@@ -242,6 +242,63 @@ input {
 
 
 
+
+	<!--달력차트, 주간 차트-->
+	<!--두번째 구간-->
+	<section id="test" class="test bg-grey roomy-60 fix"
+		style="background-color: rgba(250, 241, 219, 0.891) !important;">
+		<div class="container">
+			<div class="row">
+				<div class="main_test fix">
+
+
+					<!-- 달력 공간-->
+					<a href="careSelect.do?c_manager_id=${info.m_id}">
+						<div class="col-md-6">
+							<div class="test_item fix"
+								style="text-align: center; background-color: white; height: 408px; padding: 5px;">
+								<br>
+								<div class="item_text">
+									<legend style="text-align: center; height: 35px;"> 한달
+										달력 </legend>
+
+									<section
+										style="background-color: rgba(250, 241, 219, 0.5) !important; color: gray"
+										id="careLimit"></section>
+
+								</div>
+
+							</div>
+
+						</div>
+					</a>
+
+					<!-- 주간 차트 -->
+					<a href="monitoring.do?c_manager_id=${info.m_id}">
+						<div class="col-md-6">
+							<div class="test_item fix"
+								style="text-align: center; background-color: white; height: 408px;">
+								<div class="item_text">
+									<legend style="text-align: center; height: 35px;">주간
+										모니터링 </legend>
+
+									<section>
+										<br>
+
+									</section>
+								</div>
+							</div>
+
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
 	<!--모니터링-->
 	<section id="test" class="test bg-grey roomy-60 fix"
 		style="background-color: rgba(255, 255, 255, 0.891) !important;">
@@ -658,14 +715,13 @@ input {
 				
 			}else{
 			
-	          const labels1 = ['0.0,0.0,0.0,0.0,0.0,0.0,0.0'];
 	          const data1 = {
-	              labels: labels1,
+	              labels: [0,1,2,3,4,5,6,7],
 	              
 	              datasets: [{
 	                  label: '활동여부',
 	                  //100= 마지막에 넣어주기 최대범위설정 
-	                  data: ['00:02,01:02,02:02,03:02,04:02,05:02,05:24'],
+	                  data: [0.0,0.0,0.0,0.0,0.0,0.0,0.0],
 	                  backgroundColor: [
 	                       //라인선 색(0.2 = 투명도 )
 	                       'rgb( 255,165,0, 0.5)',

@@ -290,7 +290,7 @@ a {
 					<a href="careSelect.do?c_manager_id=${info.m_id}">
 						<div class="col-md-6">
 							<div class="test_item fix"
-								style="text-align: center; background-color: white; height: 408px; padding:5px;">
+								style="text-align: center; background-color: white; height: 408px; padding: 5px;">
 								<br>
 								<div class="item_text">
 									<legend style="text-align: center; height: 35px;"> 사용자
