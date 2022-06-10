@@ -175,10 +175,10 @@ input {
         }
         /*  */
         .current.today {
-            background: rgba(224, 134, 49, 0.514);
+            background: #FEEBB6;
         }
         .current.red {
-            background: rgba(255, 115, 90, 0.575);
+            background: #FD9F28;
         }
         
         .sec_cal .cal_wrap .dates {
@@ -375,7 +375,7 @@ input {
 					<!-- 달력 공간-->
 						<div class="col-md-6">
 							<div class="test_item fix"
-								style="text-align: center; background-color: white;">
+								style="text-align: center; background-color: white; height:640px;">
 								<br>
 								<div class="sec_cal">
         <div class="cal_nav">
@@ -404,7 +404,7 @@ input {
 						<div class="col-md-6">
 							<div class="test_item fix" 
 								style="background-color: white;">
-									<legend style="height: 35px;">주간
+									<legend style="height: 35px; text-align:center">주간
 										모니터링 </legend>
 								<div class="item_text" id="chart_w" style="width:500px; height:500px; padding-right:5px;">
 									<section>
