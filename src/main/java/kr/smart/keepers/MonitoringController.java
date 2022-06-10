@@ -50,21 +50,27 @@ public class MonitoringController {
 		System.out.println(d_c_seq);
 		ArrayList<ValueVO> list = mapper.monitoringChart(d_c_seq);
 		System.out.println(list.size());
+		String result = "0";
+		if(list.size()>0) {
 		
-		String chartValue = "" + list.get(0).getV_weight() ;
-		String chartLabel = "" + list.get(0).getV_signdate() ;
-		for(int i = 1; i<list.size(); i++) {
-			if(list.get(i).getV_weight() >= 0) {
-				chartValue += "," + list.get(i).getV_weight();
-				chartLabel += "," + list.get(i).getV_signdate();
+			String chartValue = "" + list.get(0).getV_weight() ;
+			String chartLabel = "" + list.get(0).getV_signdate() ;
+			if(list.get(0).getV_weight() <0) {
+				chartValue = "0.0";
 			}
+			for(int i = 1; i<list.size(); i++) {
+				if(list.get(i).getV_weight() >= 0) {
+					chartValue += "," + list.get(i).getV_weight();
+					chartLabel += "," + list.get(i).getV_signdate();
+				}
+			}
+			System.out.println(chartValue);
+			System.out.println(chartLabel);
+			
+			array[0] = chartValue;
+			array[1] = chartLabel;
+			result = gson.toJson(array);
 		}
-		System.out.println(chartValue);
-		System.out.println(chartLabel);
-		
-		array[0] = chartValue;
-		array[1] = chartLabel;
-		String result = gson.toJson(array);
 		
 		return result;
 	}
