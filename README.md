@@ -14,29 +14,36 @@
 
 3. 12시간이상 무반응시 사회복지사에게 알림
 
-![image](https://user-images.githubusercontent.com/96165890/173709525-0cb68fc4-7b61-4a21-b93f-53ab456abc9d.png)
-![image](https://user-images.githubusercontent.com/96165890/173709624-b77219e3-81ef-4dfa-9733-70f67213b812.png)
-![image](https://user-images.githubusercontent.com/96165890/173709635-be21962a-a072-4a9e-90a2-a5b94f8a3c8d.png)
+![image](https://user-images.githubusercontent.com/96165890/173711767-2cd4d0b9-f7f7-456b-bb51-fd904af54df8.png)
+
+![image](https://user-images.githubusercontent.com/96165890/173711797-e3939794-42bf-4a67-b1ef-1c2783a080fc.png)
+
+![image](https://user-images.githubusercontent.com/96165890/173711818-f3751d5a-b9eb-420c-a8bd-e8be1a67e270.png)
+
 
 <hr>
 <h3>🌼유스케이스🌼</h3>
 
-![image](https://user-images.githubusercontent.com/96165890/173709671-21fe9236-9d04-48a7-abf9-22d887ff74e9.png)
+![image](https://user-images.githubusercontent.com/96165890/173711844-0ac5bcdd-82a5-435f-a4ce-f908bb2f44d1.png)
+
 
 <hr>
 <h3>🌼제품회로도🌼</h3>
 
-![image](https://user-images.githubusercontent.com/96165890/173710908-be7d9f18-371d-471b-bea0-64fe013bb4e3.png)
+![image](https://user-images.githubusercontent.com/96165890/173711865-5bd645e0-c434-4bd1-b3e6-534ad0de5282.png)
+
 
 <hr>
 <h3>🌼시스템 아키텍쳐🌼</h3>
 
-![image](https://user-images.githubusercontent.com/96165890/173710099-1e2b2bc9-9639-4190-8fbe-2ce8e314e9ff.png)
+![image](https://user-images.githubusercontent.com/96165890/173711886-25efe989-4a25-442e-bc4c-8982013ada2a.png)
+
 
 <hr>
 <h3>🌼개발과정🌼</h3>
 
-![image](https://user-images.githubusercontent.com/96165890/173709936-69a2c325-1ea4-43fd-a80a-9abcc9ffccd0.png)
+![image](https://user-images.githubusercontent.com/96165890/173711904-20068e7d-e949-4177-b554-a236a9ef9a4f.png)
+
 
 <hr>
 <h3>🌼시제품 스케치, 도안🌼</h3>
@@ -58,13 +65,15 @@ https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-
 <h3>🌼최종 결과물🌼</h3>
 1. 웹
 
-![image](https://user-images.githubusercontent.com/96165890/173710454-dc0edd34-c75e-41a6-be11-656b587796cd.png)
+![image](https://user-images.githubusercontent.com/96165890/173711959-64172749-9372-45b5-9679-b630ba4e9cf2.png)
+
 
 2. 앱
 
-![image](https://user-images.githubusercontent.com/96165890/173710506-4fa092eb-4fce-441e-ba1f-ca7f370e4543.png)
+![image](https://user-images.githubusercontent.com/96165890/173711992-b4f4da66-edce-4ba4-a809-5baba68465c3.png)
 
-![image](https://user-images.githubusercontent.com/96165890/173710518-3858f5f4-0488-40f9-9cde-b825e53e1bf4.png)
+![image](https://user-images.githubusercontent.com/96165890/173712057-075dbdd1-61e6-4f08-9e04-740afaf47c52.png)
+
 
 3. 슬리퍼
 
@@ -73,7 +82,8 @@ https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-
 
 
 <hr>
-<h3> 기대효과 </h3>
+<h3>🌼기대효과🌼</h3>
+
 1. 공휴일, 주말에 발생하는 고독사 예방 가능
 
 2. 관리자, 보호자 인력 부족 문제 해소 가능
@@ -83,9 +93,9 @@ https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-
 4. 다양한 타겟층으로 확대 가능
 
 <hr>
-<h3>팀원소개</h3>
+<h3>🌼팀원소개🌼</h3>
 
-![image](https://user-images.githubusercontent.com/96165890/173710036-0c0da25d-86b0-4036-9ca6-47d7cb4cdba2.png)
+![image](https://user-images.githubusercontent.com/96165890/173712096-ca8ebc65-107e-426c-95d9-fd505821d4cd.png)
 
 
 <hr>
