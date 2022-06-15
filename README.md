@@ -1,6 +1,12 @@
-주제 : 독거노인 고독사 예방 스마트 슬리퍼
+<h3> 주제 : 독거노인 고독사 예방 스마트 슬리퍼</h3>
+
 팀명/제품명 : Keepers
-<h3>주요기능</h3>
+
+팀장 : 김도은
+
+팀원 : 정준호, 조민규, 최설미, 허도형
+
+<h3>🌼주요기능🌼</h3>
 
 1. 로드셀 센서를 통한 무게 측정
 
@@ -13,27 +19,27 @@
 ![image](https://user-images.githubusercontent.com/96165890/173709635-be21962a-a072-4a9e-90a2-a5b94f8a3c8d.png)
 
 <hr>
-<h3>유스케이스</h3>
+<h3>🌼유스케이스🌼</h3>
 
 ![image](https://user-images.githubusercontent.com/96165890/173709671-21fe9236-9d04-48a7-abf9-22d887ff74e9.png)
 
 <hr>
-<h3>제품회로도</h3>
+<h3>🌼제품회로도🌼</h3>
 
 ![image](https://user-images.githubusercontent.com/96165890/173710908-be7d9f18-371d-471b-bea0-64fe013bb4e3.png)
 
 <hr>
-<h3>시스템 아키텍쳐</h3>
+<h3>🌼시스템 아키텍쳐🌼</h3>
 
 ![image](https://user-images.githubusercontent.com/96165890/173710099-1e2b2bc9-9639-4190-8fbe-2ce8e314e9ff.png)
 
 <hr>
-<h3>개발과정</h3>
+<h3>🌼개발과정🌼</h3>
 
 ![image](https://user-images.githubusercontent.com/96165890/173709936-69a2c325-1ea4-43fd-a80a-9abcc9ffccd0.png)
 
 <hr>
-<h3>시제품 스케치, 도안</h3>
+<h3>🌼시제품 스케치, 도안🌼</h3>
 
 ![image](https://user-images.githubusercontent.com/96165890/173710113-47694926-ea97-431d-b88d-def3592a2936.png)
 
@@ -44,9 +50,12 @@ https://user-images.githubusercontent.com/96165890/173711013-4a524bb5-4b3d-41a5-
 
 https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-bea8-83989838dded.mp4
 
+![image](https://user-images.githubusercontent.com/96165890/173711567-4ac4e9ed-c419-475c-b4b1-74984af3b26f.png)
+
+
 
 <hr>
-<h3>최종 결과물</h3>
+<h3>🌼최종 결과물🌼</h3>
 1. 웹
 
 ![image](https://user-images.githubusercontent.com/96165890/173710454-dc0edd34-c75e-41a6-be11-656b587796cd.png)
@@ -56,6 +65,11 @@ https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-
 ![image](https://user-images.githubusercontent.com/96165890/173710506-4fa092eb-4fce-441e-ba1f-ca7f370e4543.png)
 
 ![image](https://user-images.githubusercontent.com/96165890/173710518-3858f5f4-0488-40f9-9cde-b825e53e1bf4.png)
+
+3. 슬리퍼
+
+![image](https://user-images.githubusercontent.com/96165890/173711521-f6831b7d-bba2-48d6-9cc5-d2ca8f52f358.png)
+
 
 
 <hr>
