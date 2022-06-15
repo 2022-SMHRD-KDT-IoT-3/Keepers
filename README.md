@@ -75,8 +75,11 @@ https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-
 <hr>
 <h3> 기대효과 </h3>
 1. 공휴일, 주말에 발생하는 고독사 예방 가능
+
 2. 관리자, 보호자 인력 부족 문제 해소 가능
+
 3. 독거노인 관리자의 편의성 증가
+
 4. 다양한 타겟층으로 확대 가능
 
 <hr>
@@ -87,7 +90,7 @@ https://user-images.githubusercontent.com/96165890/173710994-f1db7449-4d36-45d9-
 
 <hr>
 표지
-(https://github.com/2022-SMHRD-KDT-IoT-3/Keepers/files/8904605/1.Keepers.pdf)
+[1.(Keepers) 표지.pdf](https://github.com/2022-SMHRD-KDT-IoT-3/Keepers/files/8904707/1.Keepers.pdf)
 
 기획서
 [2.(Keepers) 프로젝트 기획서.pdf](https://github.com/2022-SMHRD-KDT-IoT-3/Keepers/files/8904607/2.Keepers.pdf)
